@@ -1,0 +1,401 @@
+\documentclass{beamer}
+\usepackage{pgf,tikz}
+\usepackage[french]{babel}
+\usetikzlibrary{arrows}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{enumerate}
+\usepackage{amsmath, amssymb, amsthm}
+% for use in integrals and derivatives
+\newcommand{\dd}{\mathrm d}
+\usepackage{hyperref}
+\usetheme{Warsaw}
+\usefonttheme{professionalfonts}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{}
+
+\title{Observation de débris spatiaux}
+
+\author{Nicolas Bonnotte, Maxime Chupin, Tony Février, Antoine Levitt,
+  Benjamin Marteau, Vladimir Salnikov\\\vspace{1cm}Sujet proposé par Max Cerf, EADS}
+
+\date{19 octobre 2012}
+\institute{SEME 4, Institut Henri Poincaré}
+
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\le}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\ge}{\geqslant}
+
+\begin{document}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+% \newcommand{\OutlineColumnNumbers}{2}
+
+\frame{\titlepage}
+\section{Introduction}
+% Historique débris
+\input{intro.tex}
+\frame{\tableofcontents}
+% \section{Probabilité d'observation}
+% \frame{
+%   \frametitle{Observation du débris}
+%   \begin{itemize}
+%   \item On ignore l'éclairage pour l'instant
+%   \end{itemize}
+%   \begin{center}
+%   \resizebox{0.6\textwidth}{!}{ \input{alpha.tex}}
+%   \begin{itemize}
+%   \item Le téléscope observe un cône d'angle $\tilde \alpha$ autour du zénith
+%   \item Équivalent à un observateur au centre de la terre avec un
+%     angle $\alpha \approx \frac{r}{R+r}\tilde \alpha\approx 0.1^{\circ}$
+%   \end{itemize}
+%   \end{center}
+% }
+% \frame{
+%   \frametitle{Observation du débris}
+%   \begin{itemize}
+%   \item ICI dessin 3D de l'orbite autour de la terre, et le cercle
+%     décrit par le téléscope
+%   \item L'orbite passe au-dessus du téléscope deux fois par jour
+%   \item Pendant un temps $T_{\text{obs}}$, l'orbite parcourt un angle $T_{\text{obs}} \frac{2\pi}{T_{\text{terre}}}$
+%   \item Elle est visible pendant $T_{\text{obs}} = 2\pi\alpha T_{\text{terre}} \approx
+%     20$s
+%   \end{itemize}
+% }
+% \frame{
+%   \frametitle{Observation du débris}
+%   \begin{center}
+%     \resizebox{0.6\textwidth}{!}{ \input{theta_alpha.tex}}
+%   \end{center}
+%   \begin{itemize}
+%   \item Pendant $T_{\text{obs}}$, on cherche à observer des débris qui
+%     parcourent un angle $\theta = 2 \pi
+%     \frac{T_\text{obs}}{T_{\text{débris}}}$
+%   \item $\frac \theta \alpha \approx 10$, on considère que le
+%     téléscope voit un rayon
+%   \item On voit un débris positionné aléatoirement avec une
+%     probabilité $p = \frac\theta{2\pi} = \frac \alpha {2\pi} \frac {T_{\text{terre}}}{T_{\text{débris}}}\approx 0.3\%$
+%   \end{itemize}
+% }
+\input{inclurenicolas}
+
+\section{Visibilité}
+
+\begin{frame}
+\frametitle{Repère d'étude}
+ \begin{figure}[h]
+    \centering
+    \includegraphics[width=.6\textwidth]{ombre.pdf}
+    \caption{Proportion de zone observable pendant un an}
+ \end{figure}
+  
+\end{frame}
+
+\begin{frame}
+\frametitle{Modélisation des saisons}
+
+Les saisons sont déterminées par une variation de l'angle d'incidence entre le plan équatorial et les rayons solaires.\\
+
+
+On modélise dans notre repère cette variation par $i_{soleil}(t)= i_{max}\cos(\omega_{s}t)$ où $i_{max}=23.75^o$ et $\displaystyle{\omega_s=\frac{2\pi}{T_s}}$.
+\end{frame}
+
+\begin{frame}
+\frametitle{Modélisation des saisons}
+ \input{observabilite.tex}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conditions d'éclairement}
+  
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=.6\textwidth]{map2.png}
+    \caption{Zone de jour}
+ \end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Portion de ciel observable}
+ \input{coupehorbeta.tex} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Portion de ciel observable}
+ \input{coupehordelta.tex} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Optimisation en fonction de la latitude}
+
+\begin{itemize}
+\item $\displaystyle{\beta(t)=\arccos\left(\frac{\sqrt{2rR+r^2}\cos(i_s(t))}{(R+r)\sin(\varphi)}\right)}$.
+\item $\displaystyle{\delta(t)=\arcsin\left(\frac{|\tan(i_s(t))|}{\tan(\varphi)}\right)}$.
+\item Proportion : $\displaystyle{p_{V}(t,\varphi)=\frac{(2\pi-2\beta(t))}{2\pi}\frac{(\frac{\pi}{2}-\delta(t))}{\pi}}$
+\item On optimise la proportion moyenne $$p_{M}= \frac 1 {1 \text{ an}}\int_{\text{1 an}} p_{V}(t) \dd t$$
+\end{itemize}
+
+
+
+  
+\end{frame}
+
+\begin{frame}
+\frametitle{Tracé de l'optimisé}
+
+
+ \begin{figure}[h]
+    \centering
+    \includegraphics[width=.6\textwidth]{opt.png}
+    \caption{Proportion de zone observable pendant un an}
+ \end{figure}
+
+  
+\end{frame}
+
+\begin{frame}
+\frametitle{Variation d'observabiilité}
+
+
+ \begin{figure}[h]
+    \centering
+    \includegraphics[width=.6\textwidth]{ecart.png}
+    \caption{Variation d'éclairement suivant la latitude}
+ \end{figure}
+
+  
+\end{frame}
+
+% % On suppose que ça intervient juste par une proba indépendante chaque jour
+% \frame{
+%   \frametitle{Trucs à dire}
+%   \begin{itemize}
+%   \item Indépendance de la visibilité supposée
+%   \item Héliosynchronisme : peut casser l'indépendance. En une
+%     journée, dérive $T_{\text{terre}} \Delta\omega_{s}$, à comparer
+%     avec $\alpha$ : passe $\alpha$ en un jour si $\Delta\omega_{s} \approx
+%     10\%$, correspond à $\Delta a \approx 5\%$
+%   \end{itemize}
+% }
+\section{Résultats}
+\frame{
+  \frametitle{Résultats}
+  \begin{itemize}
+  \item En un jour, si un débris est placé aléatoirement sur une
+    orbite d'inclinaison $i_{D}$, on l'observe avec probabilité
+    \begin{align*}
+      p = 2 \times \frac {2\alpha} {2\pi} \times \frac
+      {T_{\text{terre}}}{T_{\text{débris}} \sin {i_{D}}} \times p_{V}(\varphi,i_{D},t)\approx 1\%
+    \end{align*}
+  \item $n$ débris, $q$ téléscopes (suffisamment espacés), $T$ jours d'observation
+  \item Problème avec les débris héliosynchrones : si on ne les voit
+    au jour $J$, on ne les voit pas au jour $J+1$. Il faut une
+    déviation sur la période de rotation de l'ordre de 5\% pour éviter
+    ce problème.
+  \end{itemize}
+}
+\frame{
+  \frametitle{Résultats}
+  \begin{itemize}
+  % \item En un jour, si un débris est placé aléatoirement sur une
+  %   orbite d'inclinaison $i_{D}$, on l'observe avec probabilité
+  %   \begin{align*}
+  %     p = 2 \times \frac {2\alpha} {2\pi} \times \frac
+  %     {T_{\text{terre}}}{T_{\text{débris}} \sin {i_{D}}} \times p_{V}(\varphi,i_{D},t)\approx 1\%
+  %   \end{align*}
+  % \item $n$ débris, $q$ téléscopes (suffisamment espacés), $T$ jours d'observation
+  \item On suppose une ``ergodicité'' : indépendance des différentes observations
+  \item $N$ nombre de débris vus suit une loi binomiale $B(p,nqT)$
+     \begin{align*}
+      P(N \geq 1) = 1 - (1-p)^{nqT}
+    \end{align*}
+
+  \item Pour observer un débris avec un téléscope, il faut 2 mois pour
+    avoir 50\% de chances, 8 mois pour 90\%, 15 mois pour 99\%
+  \item Pour observer un débris avec dix téléscopes, il faut une semaine pour
+    avoir 50\% de chances, trois semaines pour 90\%, six semaines pour 99\%
+  % \item Tests numériques de cette loi
+  \end{itemize}
+}
+\section{Ergodicité}
+\frame{
+  \frametitle{Ergodicité}
+  \begin{itemize}
+  \item Problème modèle (on ignore la visibilité) : on observe une
+    fois par jour l'orbite du débris, il se déplace d'un angle
+    $\theta$ sur son orbite, phase initiale aléatoire.
+  \item $\theta = 2\pi\frac{T_{\text{terre}}}{T_{\text{débris}} +
+      T_{\text{précession}} \cos {i_{d}}} \approx 2\pi
+    \frac{T_{\text{terre}}}{T_{\text{débris}}} \approx 14.1 \text{ tours}$
+  \item $\theta_{n} = \theta_{0} + n \theta \mod 2\pi$, on observe le
+    débris si $\theta_{n} \in [0,\alpha]$
+  \item $N(n)$ nombre d'observations en $n$ itérations
+  \item Si
+    $\frac{\theta}{2\pi}$ est irrationnel, on prouve
+  \begin{align*}
+    \lim_{n\to\infty} \frac{N(n)}{n} = \frac{\alpha}{2\pi}
+  \end{align*}
+\item ``Loi des grand nombres''. Vitesse de convergence de cette
+  limite ? Théorème central limite ? 
+  \end{itemize}
+}
+\frame{
+  \frametitle{Ergodicité}
+  \begin{itemize}
+  \item Approximation aléatoire : $\theta = U(0,2\pi)$
+  \item $N(n) = B(n,\frac \alpha {2\pi})$
+  \item Temps caractéristique d'observation $n_{c}^{U}\approx
+    \frac{2\pi}{\alpha}$
+  \item $P(N(n) \geq 1) = 1 - (1 - \frac {\alpha}{2\pi})^{n}$
+  \item Estimation pour le modèle déterministe ?
+  \item On s'attend à ``$N(n) \geq 1$ pour $n$ de l'ordre de $\frac
+    {2\pi}{\alpha}$ pour presque tout $\theta$'', mais on n'arrive pas
+    à le prouver (bonne notion de ``de l'ordre de'' ? Cas où $\frac
+    \theta {2\pi}$ est proche d'un rationnel ?)
+  \item Tests numériques (très incomplets) : mitigé
+  \end{itemize}
+}
+\section{Simulation}
+
+\frame{
+\frametitle{Mouvement de débris (Repère géocentrique)}
+\begin{eqnarray}
+   \Omega_O(t) = \Omega_O(t_0) + (t-t_0)\dot \Omega_O  \nonumber \\
+   \Omega_D(t) = \Omega_D(t_0) + (t-t_0)\dot \Omega_D  \nonumber 
+\end{eqnarray}
+}
+
+\frame{
+\frametitle{Mouvement de débris}
+\begin{center}
+\includegraphics[width = 0.38\linewidth]{mks.pdf} \\
+\includegraphics[width = 0.9\linewidth]{RS-20.pdf}
+\end{center}
+
+
+
+}
+
+
+\frame{
+\frametitle{Mouvement de débris et télescope}
+\includegraphics[width = 0.38\linewidth]{mks.pdf} \,
+\includegraphics[width = 0.58\linewidth]{RS-20.pdf}
+
+
+\begin{eqnarray}
+   \Omega_O(t) = \Omega_O(t_0) + (t-t_0)\dot \Omega_O \nonumber \\
+   \Omega_D(t) = \Omega_D(t_0) + (t-t_0)\dot \Omega_D  \nonumber \\
+    \Omega_T(t) = \Omega_T(t_0) + (t-t_0)\dot \Omega_T  \nonumber 
+\end{eqnarray}
+}
+
+\frame{
+\frametitle{Mouvement de débris et télescope}
+\begin{center}
+\includegraphics[width = 0.9\linewidth]{map2.pdf}  
+\end{center}
+
+}
+
+\frame{
+\frametitle{Mouvement de débris, télescope et Soleil}
+\begin{center}
+\includegraphics[width = 0.75\linewidth]{map2.pdf} 
+\end{center}
+\begin{eqnarray}
+   \Omega_O(t) = \Omega_O(t_0) + (t-t_0)\dot \Omega_O  \nonumber \\
+   \Omega_D(t) = \Omega_D(t_0) + (t-t_0)\dot \Omega_D  \nonumber \\
+   \Omega_T(t) = \Omega_T(t_0) + (t-t_0)\dot \Omega_T  \nonumber \\
+   \Omega_S(t) = \Omega_S(t_0) + (t-t_0)\dot \Omega_S  \nonumber 
+\end{eqnarray}
+}
+
+
+\frame{
+\frametitle{Mouvement de débris, télescopes et Soleil}
+\begin{center}
+\includegraphics[width = 0.75\linewidth]{map2.pdf} 
+\end{center}
+\begin{eqnarray}
+   \Omega_{O_i}(t) &=& \Omega_{O_i}(t_0) + (t-t_0)\dot \Omega_{O_i}  \nonumber \\
+   \Omega_{D_i}(t) &=& \Omega_{D_i}(t_0) + (t-t_0)\dot \Omega_{D_i} , \, i = 1, \dots N \nonumber \\
+   \Omega_{T_j}(t) &=& \Omega_{T_j}(t_0) + (t-t_0)\dot \Omega_{T_j} , \, j = 1, \dots M \nonumber \\
+   \Omega_S(t) &=& \Omega_S(t_0) + \dot (t-t_0)\Omega_S  \nonumber 
+\end{eqnarray}
+}
+
+
+\frame{
+ \frametitle{Test d'érgodicité}
+    $N = 100, 1000, 5000$
+  
+  Comparaison avec  $P \sim 1 - \left(1 - p \right)^{n}$.
+  
+  \pause
+  
+  \includegraphics[width = 0.9\linewidth]{proba_obs.pdf}
+  
+  % {\small Calcul: cluster de l'ICJ Univ. Claude Bernard Lyon 1}
+}
+
+\frame{
+\frametitle{Dépendence de nombre des télescopes}
+
+\begin{center}
+ 
+\begin{tabular}{|c|c|c|c|} \hline
+ Débris & Téléscopes & Temps & \% vus \\ 
+ \hline \hline
+ 100 & 10 & $\sim$ 2 mois &82 \\
+ \hline
+ 100 & 2 & $\sim$ 10 mois &89 \\
+ \hline
+ \hline
+ 1000 & 10 & $\sim$ 2 mois &85.5 \\
+ \hline
+ 1000 & 5 & $\sim$ 4 mois &86.7 \\
+ \hline
+ 1000 & 2 & $\sim$ 10 mois &87.7 \\
+ \hline  
+ \hline
+ 10000 & 10 & $\sim$ 2 mois &84.0 \\
+ \hline
+ \hline
+ $10^5$ & 14 & $\sim$ 8 mois & $\to 99$ \\
+ \hline
+\end{tabular} 
+\end{center}
+  % {\small Calcul: cluster de l'ICJ Univ. Claude Bernard Lyon 1}
+\begin{itemize}
+\item Cohérent avec $p \approx 1\%$, mais loi pas exactement binomiale
+  : ergodicité approximative
+\end{itemize}
+}
+\section{Conclusion}
+\frame{
+  \frametitle{Conclusion}
+\begin{itemize}
+\item Calculs rendus possibles par les échelles différentes mises en
+  jeu (1 an / 1 jour, 1 jour / 2h)
+\item Ordre de grandeur : 1\% par jour
+\item Eclairage contribue un facteur moyen $1/2$, mais fortes
+  variations saisonnières
+\item Problèmes mathématiques (ergodicité)
+\item Indépendance des observations : approximation correcte mais pas
+  parfaite
+\item Contexte physique : autres facteurs déterminant l'efficacité du
+  téléscope (météo ...), possibilités et coûts d'installation, taille
+  des débris ...
+\end{itemize}
+}
+\end{document}

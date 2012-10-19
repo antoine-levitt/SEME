@@ -1,0 +1,39 @@
+
+\definecolor{qqwuqq}{rgb}{0,0.39,0}
+\definecolor{uququq}{rgb}{0.25,0.25,0.25}
+\definecolor{xdxdff}{rgb}{0.49,0.49,1}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\draw[->,color=black] (-5.76,0) -- (6.47,0);
+\foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5,6}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-4.44) -- (0,3.78);
+\foreach \y in {-4,-3,-2,-1,1,2,3}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-5.76,-4.44) rectangle (6.47,3.78);
+\draw [shift={(0,0)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (0:0.7) arc (0:22:0.7) -- cycle;
+\draw(0,0) circle (3cm);
+\draw(0,0) circle (2cm);
+\draw [domain=-5.76:6.47] plot(\x,{(-0-0*\x)/2});
+\draw (2.78,-4.44) -- (2.78,3.78);
+\draw (0,0)-- (2.78,1.12);
+\draw (0,0)-- (2.78,-1.12);
+\begin{scriptsize}
+\fill [color=qqqqff] (0,0) circle (1.5pt);
+\draw[color=qqqqff] (-0.12,0.24) node {$O$};
+\fill [color=xdxdff] (2,0) circle (1.5pt);
+\draw[color=xdxdff] (2.1,0.16) node {$T$};
+\fill [color=uququq] (0,2) circle (1.5pt);
+\draw[color=uququq] (0.2,2.16) node {$N_1$};
+\fill [color=uququq] (3,0) circle (1.5pt);
+\draw[color=uququq] (3.1,0.16) node {$D$};
+\fill [color=uququq] (0,-2) circle (1.5pt);
+\draw[color=uququq] (0.09,-1.84) node {$S$};
+\fill [color=xdxdff] (2.78,1.12) circle (1.5pt);
+\draw[color=xdxdff] (2.88,1.28) node {$A$};
+\fill [color=uququq] (2.78,-1.12) circle (1.5pt);
+\draw[color=uququq] (2.87,-0.96) node {$B$};
+\draw[color=qqwuqq] (0.56,0.11) node {$\beta$};
+\end{scriptsize}
+\end{tikzpicture}

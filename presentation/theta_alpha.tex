@@ -1,0 +1,22 @@
+\definecolor{qqwuqq}{rgb}{0,0.39,0}
+\definecolor{ffqqqq}{rgb}{1,0,0}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.46,-1.58) rectangle (5.82,5.82);
+\draw [shift={(1,2)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (0:2) arc (0:74.05:2) -- cycle;
+\draw [shift={(1,2)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (143.2:2) arc (143.2:161.57:2) -- cycle;
+\draw [color=ffqqqq] (1,2) circle (3.16cm);
+\draw (1,2)-- (-2,3);
+\draw (1,2)-- (-1.53,3.89);
+\draw (1,2)-- (4.16,2);
+\draw (1,2)-- (1.87,5.04);
+\begin{scriptsize}
+\fill [color=qqqqff] (1,2) circle (1.5pt);
+\fill [color=black] (4.16,2) circle (1.5pt);
+\draw[color=black] (5.0,2.26) node {$\text{Débris à t}$};
+\fill [color=black] (1.87,5.04) circle (1.5pt);
+\draw[color=black] (3.54,5.3) node {$\text{Débris à }t+Tobs$};
+\draw[color=qqwuqq] (2.22,2.6) node {$\theta$};
+\draw[color=qqwuqq] (0.64,2.48) node {$\alpha$};
+\end{scriptsize}
+\end{tikzpicture}

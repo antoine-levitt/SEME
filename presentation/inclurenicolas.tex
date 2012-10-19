@@ -1,0 +1,88 @@
+\section{Observation de l'orbite}
+
+\frame{
+  \frametitle{Ouverture angulaire}
+
+On ignore l'éclairage pour l'instant
+
+
+  \begin{center}
+  \resizebox{0.6\textwidth}{!}{ \input{alpha.tex}}
+  \end{center}
+  
+ Le téléscope observe un cône d'angle $\tilde \alpha$ autour du zénith
+
+$\rightarrow$ équivalent à un observateur au centre de la terre avec un
+    angle $\alpha \approx \frac{r}{R+r}\tilde \alpha\approx 0.1^{\circ}$
+
+}
+
+
+\begin{frame}{Quelle proportion des débris voit-on ?}
+
+On suppose l'orbite uniformément remplie. Quelle proportion des débris voit-on à chaque observation ?
+
+\bigskip
+
+On note :
+\begin{itemize}
+\item $\omega_D$ la vitesse (angulaire) de déplacement des débris
+\item $\omega_T$ celle du télescope $T$
+\item $\theta$ l'angle entre la trajectoire du télescope et celle des débris:
+\[ \theta = \arccos\left(\frac{\cos{i_D}}{\sin(\varphi)}\right) \]
+\item $\varphi$ latitude de $T$ ($\varphi = 0$ au pôle Nord, $\frac{\pi}{2}$ à l'équateur)
+\item $i_D$ inclinaison de l'orbite ($i_D = 0$ sur le plan de l'équateur, $\frac{\pi}{2}$ pour une orbite polaire)
+\end{itemize}
+
+\bigskip
+
+\end{frame}
+
+\definecolor{qqzzqq}{rgb}{0,0.6,0}
+\definecolor{ffqqqq}{rgb}{1,0,0}
+\definecolor{qqqqcc}{rgb}{0,0,0.8}
+\definecolor{uququq}{rgb}{0.25,0.25,0.25}
+\begin{frame}{Quelle proportion des débris voit-on ?}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=3cm,y=3cm]
+\draw[color=black] (-1.44,0) -- (1.31,0);
+%\foreach \x in {-1,-0.5,0.5,1}
+%\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[color=black] (0,-1.36) -- (0,1.28);
+%\foreach \y in {-1,-0.5,0.5,1}
+%\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-1.44,-1.36) rectangle (1.31,1.28);
+\draw [shift={(-1.25,-1)},color=qqqqcc,fill=qqqqcc,fill opacity=0.1] (0,0) -- (0:0.18) arc (0:75.07:0.18) -- cycle;
+\draw(0,0) circle (1);
+\draw [->] (-1.25,-1) -- (-0.85,-1);
+\draw [->] (-1.25,-1) -- (-1.05,-0.25);
+\draw [color=ffqqqq,domain=-1.44:1.31] plot(\x,{(--0.19--0.75*\x)/0.2});
+\draw [color=qqzzqq,domain=-1.44:1.31] plot(\x,{(-0-0.2*\x)/0.75});
+\draw [->] (-0.43,-0.67) -- (-0.06,-0.77);
+\draw [->] (-0.43,-0.67) -- (-0.2,0.18);
+\begin{scriptsize}
+\fill [color=uququq] (0,0) circle (1.5pt);
+%\draw[color=uququq] (0.05,0.08) node {$O$};
+\draw[color=black] (-0.87,-0.92) node {$\omega_T$};
+\draw[color=black] (-1,-0.61) node {$\omega_D$};
+\draw[color=qqqqcc] (-1.15,-0.92) node {$\theta$};
+\draw[color=black] (0.13,-0.66) node {$\omega_T \cos(\theta)$};
+\draw[color=black] (0.1,-0.2) node {$\omega_D + \omega_T sin(\theta)$};
+\end{scriptsize}
+\end{tikzpicture}
+
+{\scriptsize \textcolor{red}{Rouge} : orbite, \textcolor{qqzzqq}{Vert} : direction apparente de déplacement de l'orbite }
+\end{center}
+\end{frame}
+
+\begin{frame}{Quelle proportion des débris voit-on ?}
+L'orbite semble se déplacer à une vitesse $\omega_T \sin(\theta)$, la fenêtre d'observation a un diamètre angulaire $2\alpha$ : on observe donc l'orbite durant
+\[ T_{\text{obs}} = \frac{2\alpha}{\omega_T \sin(\theta)} \]
+
+\bigskip
+
+Puisque $\omega_D \gg \omega_T$, par chaque point de l'orbite visible on voit passer durant $\mathrm{d}t$ un nombre $\omega_D \mathrm{d}t$ de débris. La proportion totale observée est donc
+\[ \color{red} T_\text{obs} \omega_D =  \frac{2\alpha\omega_D}{\sin(\theta) \omega_T }  \]
+\end{frame}
+
