@@ -6,6 +6,11 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage[percent]{overpic}
+\usepackage{pgf,tikz}
+\usetikzlibrary{arrows}
+\usepackage{enumerate}
+\usepackage{amsmath, amssymb, amsthm}
+\newcommand{\eps}{\varepsilon}
 \author{Nous}
 
 \begin{document}
@@ -18,5 +23,79 @@
 
 % \tableofcontents
 \section{Introduction}
+\section{Ergodicité}
+Considérons un téléscope et un débris. Si la latitude du téléscope le
+permet, il croise l'orbite du débris deux fois par jour. Entre deux
+observations séparées d'un temps $T$, le débris parcourt une
+proportion $\theta$ de son orbite, où
+\begin{align*}
+  \theta(T) \approx \frac T {T_{\text{Débris}}}.
+\end{align*}
+
+Même si on prend en compte les corrections induites par la latitude,
+l'inclinaison de l'orbite et la précession, l'important est que cet
+angle $\theta(T)$ est toujours proportionel à $T$. Le fait qu'on fasse
+deux observations par jour ne change pas fondamentalement le problème
+qu'on étudie, et on est donc ramenés au modèle simplifié suivant:
+
+\begin{center}
+  \input{../presentation/theta_alpha}
+  
+  (refaire meilleure figure)
+\end{center}
+
+On pose
+\begin{align}
+  \label{modelejouet}
+  \theta_{n} = (\theta_{0} + n \theta) \mod 1,
+\end{align}
+où $\theta_{0}$ est une phase initiale aléatoirement distribuée, et
+$\theta$ est un paramètre. On considère qu'on a observation du débris
+au jour $n$ si $\theta_{n} \in [0,\alpha]$, où $\alpha$ est
+l'ouverture du téléscope. Les valeurs numériques donnent $\theta
+\approx 14.1, \alpha \approx 0.1/360$, ce qui justifie l'approximation
+$\alpha \ll \theta \mod 1$. On appelle $N(n)$ le nombre cumulé
+d'observations du débris au jour $n$. On sait que si $\theta$ est
+irrationnel, alors
+\begin{align}
+  \label{largenumbers}
+  \lim_{n\to\infty} \frac{N(n)} n = \alpha.
+\end{align}
+(théorème de Weyl ?)
+
+Ce théorème est un analogue de la loi des grand nombres : en temps
+grand, la fréquence d'observation du débris est égale à la proportion
+du cercle observée par le téléscope. Le problème est que ce théorème
+ne nous apporte pas d'informations concrètes sur la vitesse de
+convergence de cette limite, qui nous permettrait d'obtenir des
+conclusions pratiques. 
+
+Si au lieu du modèle déterministe \eqref{modelejouet} on utilise un
+modèle probabiliste où $\theta_{n}$ est une variable aléatoire
+distribuée uniformément entre 0 et 1, alors $N(n)$ suit la loi
+binomiale $B(n,\alpha)$. Comme cette loi est connue, on peut extraire
+les informations qui nous intéressent. Par exemple,
+\begin{align}
+  P(N(n) \geq 1) = 1 - (1-\alpha)^{n}
+\end{align}
+
+Le passage du modèle déterministe au modèle probabiliste pose
+néanmoins problème. Même si le théorème \eqref{largenumbers} peut
+laisser penser que, pour presque tout $\theta$, (et donc pour toutes
+les valeurs physiques) on va observer un débris en un temps de l'ordre
+de $1/\alpha$, ce n'est pas toujours le cas. Pour par exemple $\theta
+= 1/2 + \eps$, avec $\eps$ petit, un débris placé avec un angle
+initial $\theta_{0}$ proche mais plus petit que $1/2$ va être observé
+au bout d'un temps de l'ordre de $1/\eps$.
+
+Les simulations numériques que nous avons effectuées montrent que
+l'approximation aléatoire est une bonne approximation, mais ne permet
+pas de rendre compte de certains phénomènes (certains débris mettent
+plus de temps à se laisser observer que dans le modèle aléatoire). La
+question de la compréhension fine de ce phénomène est une question
+ouverte intéressante du point de vue à la fois théorique (théorie
+ergodique) et pratique (pour se prémunir de la possibilité de ne pas
+observer certains débris aussi rapidement que ce que prédit l'approche
+probabiliste).
 
 \end{document}
