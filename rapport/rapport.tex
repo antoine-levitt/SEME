@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper,reqno]{article}
+\documentclass[11pt,a4paper,reqno]{amsart}
 \setlength{\textwidth}{125mm}
 \setlength{\textheight}{195mm}
 \usepackage{fullpage}
@@ -11,7 +11,8 @@
 \usepackage{enumerate}
 \usepackage{amsmath, amssymb, amsthm}
 \newcommand{\eps}{\varepsilon}
-\author{Nous}
+\author{Nicolas Bonnotte, Maxime Chupin, Tony Février,\\ Antoine Levitt,
+  Benjamin Marteau, Vladimir Salnikov}
 
 \begin{document}
 \title{Observation de débris}
@@ -22,7 +23,28 @@
 \end{abstract}
 
 % \tableofcontents
+\section{Contexte}
+Ce travail a été réalisé dans le cadre de la 4ème édition de la
+Semaine d'Etude Mathématiques et Entreprises (SEME), qui s'est tenue à
+dans les locaux de l'Institut Henri Poincaré (IHP) à Paris du Lundi 15
+au Vendredi 19 octobre 2012. Le groupe souhaite remercier les
+organisateurs de la SEME, ainsi que Astrium et plus précisément Max
+Cerf pour avoir proposé ce sujet, que nous avons trouvé intéressant et
+riche.
+
+Les participants sont:
+\begin{itemize}
+\item Nicolas Bonnotte
+\item Maxime Chupin
+\item Tony Février
+\item Antoine Levitt, doctorant à l'Université Paris Dauphine
+\item Benjamin Marteau
+\item Vladimir Salnikov
+\end{itemize}
+(rajoutez vos affiliations)
 \section{Introduction}
+\section{Observation du débris}
+\section{Conditions d'éclairement}
 \section{Ergodicité}
 Considérons un téléscope et un débris. Si la latitude du téléscope le
 permet, il croise l'orbite du débris deux fois par jour. Entre deux
@@ -61,7 +83,7 @@ irrationnel, alors
   \label{largenumbers}
   \lim_{n\to\infty} \frac{N(n)} n = \alpha.
 \end{align}
-(théorème de Weyl ?)
+(théorème de Birkhoff)
 
 Ce théorème est un analogue de la loi des grand nombres : en temps
 grand, la fréquence d'observation du débris est égale à la proportion
@@ -97,5 +119,26 @@ ouverte intéressante du point de vue à la fois théorique (théorie
 ergodique) et pratique (pour se prémunir de la possibilité de ne pas
 observer certains débris aussi rapidement que ce que prédit l'approche
 probabiliste).
+
+\section{Résultats numériques}
+
+\section{Conclusion}
+Limitations, perspectives :
+\begin{itemize}
+\item Orbites circulaires (modèle adaptable)
+\item $T_{\text{débris}} \ll T_{\text{terre}}$ : erreur de $10\%$ pour
+  orbites basses (héliosynchrones), pas valable pour orbites hautes
+  (géostationnaires)
+\item Limites du modèle probabiliste, qui semble pourtant assez
+  pertinent. Modèle effectif qui rendrait compte du synchronisme
+  partiel des phénomènes ?
+\item Pas de prise en compte fine du téléscope (quelle position
+  choisir pour un bon $\alpha$ ?)
+\item Simulations numériques naïves (timestep trop grand quand orbite
+  en vue donc sous-estimation de la visibilité, et timestep trop petit
+  quand orbite pas en vue donc temps de calcul beaucoup trop
+  important). Essayer de prédire les intersections, et
+  ``fast-forward'' de la simulation.
+\end{itemize}
 
 \end{document}
