@@ -10,6 +10,7 @@
 \usetikzlibrary{arrows}
 \usepackage{enumerate}
 \usepackage{amsmath, amssymb, amsthm}
+\usepackage{url}
 \newcommand{\eps}{\varepsilon}
 \author{Nicolas Bonnotte, Maxime Chupin, Tony Février,\\ Antoine Levitt,
   Benjamin Marteau, Vladimir Salnikov}
@@ -37,7 +38,7 @@ Les participants sont:
 \item Nicolas Bonnotte
 \item Maxime Chupin
 \item Tony Février
-\item Antoine Levitt, doctorant à l'Université Paris Dauphine
+\item Antoine Levitt, doctorant à l'Université Paris Dauphine, \url{levitt@ceremade.dauphine.fr}
 \item Benjamin Marteau
 \item Vladimir Salnikov
 \end{itemize}
@@ -46,25 +47,47 @@ Les participants sont:
 \section{Observation du débris}
 \section{Conditions d'éclairement}
 \section{Ergodicité}
-Considérons un téléscope et un débris. Si la latitude du téléscope le
-permet, il croise l'orbite du débris deux fois par jour. Entre deux
-observations séparées d'un temps $T$, le débris parcourt une
-proportion $\theta$ de son orbite, où
-\begin{align*}
-  \theta(T) \approx \frac T {T_{\text{Débris}}}.
-\end{align*}
+Les calculs que nous avons faits donnent la probabilité $p$ qu'étant
+donné un débris de paramètres $a_{D}$ et $i_{D}$ positionné
+aléatoirement sur son orbite, il soit vu en un jour. La question qui
+se pose maintenant est celle de l'indépendance des
+observations. Peut-on considérer que l'observation au jour $J+1$ est
+indépendante de l'observation au jour $J$ ? Si on regarde le ciel
+pendant $N$ jours, le nombre de fois où le débris est vu suit-il une
+loi binomiale $B(n,p)$, comme ce serait le cas si les observations
+étaient indépendantes ? Si non, peut-on obtenir des estimations sur la
+durée d'observation nécessaire pour voir le débris ?
 
-Même si on prend en compte les corrections induites par la latitude,
-l'inclinaison de l'orbite et la précession, l'important est que cet
-angle $\theta(T)$ est toujours proportionel à $T$. Le fait qu'on fasse
-deux observations par jour ne change pas fondamentalement le problème
-qu'on étudie, et on est donc ramenés au modèle simplifié suivant:
+La réponse mathématique à ces questions est délicate. Dans cette
+partie, on introduit un modèle simplifié qui reprend néanmoins les
+caractéristiques principales du problème réel, et on étudie le passage
+à un modèle probabiliste. On considère un téléscope et un débris, et
+on ignore les problèmes de visibilité dûs au soleil, ainsi que le
+mouvement de précession.
 
-\begin{center}
-  \input{../presentation/theta_alpha}
+Si la latitude du téléscope le permet, la zone d'observation du
+téléscope croise l'orbite du débris deux fois par jour, tous les jours
+aux mêmes heures $t_{1}$ et $t_{2}$. Pendant tout le temps où l'orbite
+est visible, le débris parcourt un angle $\beta$ sur son orbite. Dans
+le régime qui nous intéresse, $\beta \approx 10 \alpha$ : on
+considérera donc l'approximation $\beta \gg \alpha$ où le téléscope
+observe un point de l'orbite, et verra le débris si il traverse ce
+point. Entre deux croisements de l'orbite et du téléscope, le débris
+parcourt un angle $\theta$ sur son orbite. $\theta$ alterne entre deux
+valeurs $\theta_{t_{1} \to t_{2}}$ et $\theta_{t_{2} \to t_{1}}$. Ces
+deux valeurs ne varient pas de jour en jour (même si on prend en
+compte la précession). On simplifie le modèle en considérant que
+$\theta_{t_{1} \to t_{2}} = \theta_{t_{2} \to t_{1}} = \theta$, ou de
+façon équivalente qu'on n'observe qu'une fois sur les deux
+opportunités par jour. Cette simplification n'affecte pas les
+caractéristiques principales du modèle.
+
+% \begin{center}
+%   \input{../presentation/theta_alpha}
+%   \input{ergodic}
   
-  (refaire meilleure figure)
-\end{center}
+%   (refaire meilleure figure)
+% \end{center}
 
 On pose
 \begin{align}
@@ -73,17 +96,15 @@ On pose
 \end{align}
 où $\theta_{0}$ est une phase initiale aléatoirement distribuée, et
 $\theta$ est un paramètre. On considère qu'on a observation du débris
-au jour $n$ si $\theta_{n} \in [0,\alpha]$, où $\alpha$ est
-l'ouverture du téléscope. Les valeurs numériques donnent $\theta
-\approx 14.1, \alpha \approx 0.1/360$, ce qui justifie l'approximation
-$\alpha \ll \theta \mod 1$. On appelle $N(n)$ le nombre cumulé
-d'observations du débris au jour $n$. On sait que si $\theta$ est
-irrationnel, alors
+au jour $n$ si $0 \in [\theta_{n}, \theta_{n}+\beta]$, où $\beta$ est
+la fraction de l'orbite parcourue par le débris pendant une
+journée. On appelle $N(n)$ le nombre cumulé d'observations du débris
+au jour $n$. On sait que si $\theta$ est irrationnel, alors
 \begin{align}
   \label{largenumbers}
-  \lim_{n\to\infty} \frac{N(n)} n = \alpha.
+  \lim_{n\to\infty} \frac{N(n)} n = \beta.
 \end{align}
-(théorème de Birkhoff)
+(théorème d'équirépartition\footnote{\url{http://en.wikipedia.org/wiki/Equidistribution_theorem}})
 
 Ce théorème est un analogue de la loi des grand nombres : en temps
 grand, la fréquence d'observation du débris est égale à la proportion
@@ -95,19 +116,18 @@ conclusions pratiques.
 Si au lieu du modèle déterministe \eqref{modelejouet} on utilise un
 modèle probabiliste où $\theta_{n}$ est une variable aléatoire
 distribuée uniformément entre 0 et 1, alors $N(n)$ suit la loi
-binomiale $B(n,\alpha)$. Comme cette loi est connue, on peut extraire
-les informations qui nous intéressent. Par exemple,
+binomiale $B(n,\beta)$. Cela implique par exemple
 \begin{align}
-  P(N(n) \geq 1) = 1 - (1-\alpha)^{n}
+  P(N(n) \geq 1) = 1 - (1-\beta)^{n}.
 \end{align}
 
 Le passage du modèle déterministe au modèle probabiliste pose
 néanmoins problème. Même si le théorème \eqref{largenumbers} peut
 laisser penser que, pour presque tout $\theta$, (et donc pour toutes
 les valeurs physiques) on va observer un débris en un temps de l'ordre
-de $1/\alpha$, ce n'est pas toujours le cas. Pour par exemple $\theta
-= 1/2 + \eps$, avec $\eps$ petit, un débris placé avec un angle
-initial $\theta_{0}$ proche mais plus petit que $1/2$ va être observé
+de $1/\beta$, ce n'est pas toujours le cas. Pour par exemple $\theta =
+1/2 + \eps$, avec $\eps$ petit, un débris placé avec un angle initial
+$\theta_{0}$ proche mais plus grand que $1/2 + \beta$ va être observé
 au bout d'un temps de l'ordre de $1/\eps$.
 
 Les simulations numériques que nous avons effectuées montrent que
