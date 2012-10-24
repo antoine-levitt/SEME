@@ -1,0 +1,157 @@
+\renewcommand{\phi}{\varphi}
+
+\newcommand{\TD}{T_\text{d}}
+\newcommand{\omegaD}{\omega_\text{d}}
+\newcommand{\iD}{i_\text{d}}
+\newcommand{\altitudeD}{r}
+\newcommand{\rayonD}{\rayonT+\altitudeD}
+
+\newcommand{\TT}{T_\text{t}}
+\newcommand{\omegaT}{\omega_\text{t}}
+\newcommand{\iT}{i_\text{t}}
+\newcommand{\rayonT}{R}
+
+\newcommand{\referentiel}{\mathcal{R}}
+
+\section{Observabilité d'une orbite}
+
+\subsection{Référentiel et notations}
+
+Supposons qu'au temps $t=0$, on puisse voir au centre du télescope une certaine orbite, et donc potentiellement les débris qui s'y trouveraient. Pendant combien de temps encore pourra-t-on encore la voir ? Et, quand elle aura disparue, pendant combien de temps l'aura-t-on vue au total ?
+
+On se place dans un référentiel $\referentiel = (O,\vec{e}_x,\vec{e}_y,\vec{e}_z)$ dont le centre est le centre de la Terre, tel que $(O,\vec{e}_x,\vec{e}_y)$ soit le plan de l'équateur. Notons $\iT \in [-\frac{\pi}{2}, \frac{\pi}{2}]$ l'inclinaison du télescope vis-à-vis de l'équateur, et $\phi \in [0,\pi]$ sa latitude : $\iT = \frac{\pi}{2} - \phi$, et $\phi=0$ correspond au pôle Nord, $\phi = \pi$ au pôle Sud. En notant  $\rayonT$ le rayon de la Terre et $\omegaT = \frac{2\pi}{\TT}$ la pulsation du télescope, les coordonnées de ce dernier dans notre référentiel $\referentiel$  sont :
+\[ 
+\overrightarrow{OT} = \rayonT \vec{u} \qquad \text{avec} \qquad \vec{u}(t) = \left(\begin{array}{c}
+\cos(\omegaT t) \cos(\iT) \\
+\sin(\omegaT t) \cos(\iT) \\
+\sin(\iT)
+\end{array}
+\right).
+\]
+Supposons que l'orbite soit un cercle de centre $O$, de rayon $\rayonD$, dans un plan incliné d'un angle $\iD \in [0, \frac{\pi}{2}]$ vis-à-vis de l'équateur et de direction normale
+\[ 
+\vec{n} =  \left(\begin{array}{c}
+ \sin(\iD)\cos(\theta) \\
+\sin(\iD)\sin(\theta) \\
+ \cos(\iD) 
+\end{array}
+\right).
+\]
+%L'orbite se trouve donc dans le plan $(O, \vec{u}, \vec{v})$, avec
+%\[ 
+%\vec{u} =  \left(\begin{array}{c}
+% -\sin(\theta) \\
+%\cos(\theta) \\
+%0 
+%\end{array}
+%\right)
+%\qquad \text{et} \qquad
+%\vec{v} = \vec{n} \wedge \vec{u} =  \left(\begin{array}{c}
+% -\cos(\iD) \cos(\theta) \\
+% -\cos(\iD)\sin(\theta) \\
+%  \sin(\iD)
+%\end{array}
+%\right)
+%\]
+À $t=0$, le télescope coupe le plan de l'orbite, et cela entraîne $\vec{n}\cdot \vec{u} = 0$. L'angle $\theta$ doit donc vérifier la relation
+\[ \cos(\theta) = - \frac{\sin(\iT)\cos(\iD)}{\cos(\iT)\sin(\iD)}.\]
+
+On note $\alpha$ le demi-angle de d'ouverture du télescope, ou plutôt le demi-angle qui serait celui sous lequel un observateur placé au centre de la Terre verrait la même chose à l'altitude $\altitudeD$ que le télescope. Si $\alpha_0$ est l'ouverture réelle du télescope, on a (voir figure \ref{alpha}) :
+\[ \alpha = \frac{\rayonT}{\rayonD} \alpha_0.\]
+
+\begin{figure}
+\begin{center}
+\scriptsize
+\def\figurewidth{0.6\linewidth}
+\input{figures/alpha.tex}
+\caption{Rapport entre les angles $\alpha$ et $\alpha_0$} \label{alpha}
+\end{center}
+\end{figure}
+
+
+\subsection{Calcul approché du temps annuel d'observation}
+
+Supposons que l'orbite apparaisse dans la visée du télescope avec un angle $\psi$ vis-à-vis de l'horizontale. Elle semble alors balayer la fenêtre d'observation avec une vitesse $\omegaT \sin(\psi)$ (voir figure \ref{fenetre}). Il lui faut donc un temps $t$ pour traverser entièrement celle-ci, avec $t$ donné par la formule
+\[ t = \frac{2\alpha}{\omegaT \sin(\psi)}.\]
+Cet angle $\psi$ est l'angle entre le vecteur vitesse du télescope $T$ et celui d'un débris $D$ situé sur l'orbite. 
+%On connait déjà $\overrightarrow{OT}$ ; quant à $\overrightarrow{OD}$, on sait qu'il se déplace dans un plan $(O, \vec{f}_1, \vec{f}_2)$ perpendiculaire à $\vec{n}$ sur un cercle de rayon $\rayonD$ de centre $O$ et de vitesse angulaire $\omegaD = \frac{2\pi}{\TD}$, et que $O$, $T$ et $D$ sont alignés pour $t=0$. Ceci nous suffit pour obtenir :
+%\[ \overrightarrow{OD} = (\rayonD)\vec{v} \qquad \text{avec} \qquad \vec{v} = \cos(\omegaD t) \vec{f}_1 + \sin(\omegaD t) \vec{f}_2\]
+%si du moins
+%\[ 
+%\vec{f}_1 =  \left(
+%	\begin{array}{c}
+%		\cos(\iT) \\
+%		0\\
+%		\sin(\iT)
+%	\end{array}
+%\right) \quad \text{et} \quad \vec{f}_2 =  \frac{1}{\cos(\iT)} \left(
+%	\begin{array}{c}
+%		\sin(\iT) \sqrt{\sin(\iD)^2 - \sin(\iT)^2} \\
+%		\cos(\iD) \\
+%		-\cos(\iT) \sqrt{\sin(\iD)^2 - \sin(\iT)^2}
+%	\end{array}
+%\right).
+%\]
+%Par conséquent, l'angle $\psi$ est donné par la formule
+On peut montrer que
+\[ 
+\cos(\psi) = \frac{\cos(\iD)}{\cos(\iT)}.
+\]
+Puisqu'il y a deux observations par an, le temps annuel d'observation de l'orbite est
+\[ \tau = \frac{4\alpha\cos(\iT)}{\sqrt{\sin(\iD)^2 - \sin(\iT)^2}}.\]
+Malheureusement, cette formule n'a probablement pas de sens si $\iD$ et $\iT$ sont trop rapprochés, ou si $\iT$ est trop proche de $\frac{\pi}{2}$. C'est pourquoi nous allons maintenant essayer une autre méthode, exacte celle-ci.
+
+\begin{figure}
+\begin{center}
+\scriptsize
+\def\figurewidth{0.6\linewidth}
+\input{figures/fenetre.tex}
+\caption{Fenêtre d'observation} \label{fenetre}
+\end{center}
+\end{figure}
+
+
+
+\subsection{Calcul exact du temps annuel d'observation}
+
+On rappelle que $\alpha$ désigne le demi-angle d'observation en équivalent pour un observateur situé au centre de la Terre. L'orbite est donc visible si et seulement si
+\[ -\sin(\alpha) \leq \vec{n} \cdot \vec{u} \leqslant \sin(\alpha).\]
+Notons $t_\pm$ les deux instants les plus proches de $t=0$ tels que
+\[  \vec{n} \cdot \vec{u}(t_+) = \sin(\alpha) \qquad \text{et} \qquad  \vec{n} \cdot \vec{u}(t_-) = -\sin(\alpha).\] 
+Puisque $\alpha$ est petit, on a donc :
+\begin{multline*}
+\cos(\omegaT t_\pm) \cos(\iT) \sin(\iD) \cos(\theta) + \sin(\omegaT t_\pm) \cos(\iT)\sin(\iD)\sin(\theta) \\
+ = \pm\alpha -  \sin(\iT)\cos(\iD).
+\end{multline*}
+Ceci entraîne
+\[ \cos(\theta - \omegaT t_\pm) = \cos(\theta) \pm  \frac{\alpha}{\cos(\iT)\sin(\iD)}.\]
+%Si $t_\pm$ est petit, alors
+%\[ \sin(\theta) \omegaT t_\pm - \frac{1}{2} \cos(\theta) \left(\omegaT t_\pm\right)^2 \approx \pm  \frac{\sin(\alpha)}{\cos(\iT)\sin(\iD)}.\]
+%Si $\iD \neq \iT$, alors $\sin(\theta) \neq 0$ et 
+%\[ t_\pm = \pm \frac{\alpha}{\omegaT} \frac{1}{\sqrt{\cos(\iT)\sin(\iD)}\sqrt{\cos(\iT)\sin(\iD) - \sin(\iT)\cos(\iD)}}\]
+Le taux d'observation sur un an est  $ \tau = 2| t_+ - t_-|$, en convenant que $t_\pm = 0$ lorsque la formule donnant $t_\pm$ n'a pas de sens. On a :
+\begin{align*}
+ \tau = & \frac{4\alpha}{\omegaT\sqrt{|\sin(\iD)^2 - \sin(\iT)^2}|} & \text{si $\iD \neq \pm\iT$ et $\iD \gg \alpha$}, \\
+ \tau = &  \frac{2}{\omegaT}\sqrt{\frac{2 \alpha}{\cos(\iD)\sin(\iD)}} & \text{si $\iD = \pm\iT$ et $\iD \gg \alpha$}.
+\end{align*}%
+
+\begin{figure}
+\scriptsize
+\begin{center}
+\def\svgwidth{0.5\linewidth}
+ \input{figures/observabilite.tex}
+ \vspace*{-2em}
+\caption{Temps annuel d'observation (en jours)} \label{observabilite}
+\end{center}
+\end{figure}%
+
+La figure \ref{observabilite} montre le nombre de journées par an où l'orbite est visible. Cette durée ne dépend que de $|\iT|$ et de $\iD$. Lorsque $\iD=\iT=0$ ou $\iD=\iT=\frac{\pi}{2}$, l'orbite est en permanence visible : le premier cas correspond au télescope situé sur l'équateur avec une orbite équatoriale, le second au télescope au pôle Nord avec une orbite polaire. Lorsque $\iD < |\iT|-\alpha$, l'orbite n'est pas assez inclinée et n'est donc jamais visible par le télescope, situé lui à une latitude trop élevée. Lorsque $\iD=\iT$, l'orbite est visible au moins pendant 30 jours par an, pour $\iD = \iT = \frac{\pi}{4}$. Notons que si $\iD = \iT - \alpha/2$ et $\iT = \frac{\pi}{4}$, l'orbite est encore visible 22 jours par an.
+ Lorsque $\iD = \frac{\pi}{2}$ et $\iT = 0$, c'est-à-dire pour une orbite polaire et un télescope à l'équateur, l'orbite n'est plus visible que 4 jours par an. 
+
+
+\subsection{Partie de l'orbite observée chaque année}
+
+Lorsque l'on voit l'orbite durant un temps $\mathrm{d}t$, celle-ci tournant avec une vitesse $\omegaD$, on observe en fait une proportion $\mathrm{d}p = \frac{\omegaD}{2\pi} \mathrm{d} t = \frac{\mathrm{d}t}{\TD}$. En supposant que, lorsque deux observations sont possibles, on ne voit jamais la même chose (ce qui donne donc une borne supérieure), la proportion de l'orbite observée sur un an est donc
+\[ p = \frac{\omegaD \tau}{2\pi} = \frac{\tau}{\TD}.\]
+
+

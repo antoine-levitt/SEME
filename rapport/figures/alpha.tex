@@ -1,0 +1,36 @@
+\newlength{\unit}
+\newlength{\width}
+\setlength{\width}{\figurewidth}
+\setlength{\unit}{0.0926\width}
+%\setlength{\unit}{1cm}
+%\setlength{\unit}{\texwidth}
+
+\definecolor{xdxdff}{rgb}{0.49,0.49,1}
+\definecolor{qqwuqq}{rgb}{0,0.39,0}
+\definecolor{qqqqcc}{rgb}{0,0,0.8}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=\unit,y=\unit]
+\clip(4.11,-0.63) rectangle (10.8,5.62);
+\draw [shift={(5,3)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (49.79:0.75) arc (49.79:90:0.75) -- cycle;
+\draw [shift={(5,0)},color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0,0) -- (72.58:0.75) arc (72.58:90:0.75) -- cycle;
+\draw [color=red, densely dotted] (5,0) circle (5\unit);
+\draw [color=red] (5,5) arc (90:72:5\unit);
+\draw [color=qqqqcc] (5,0) circle (3\unit);
+\draw[dashed] (5,3)-- (5,0);
+\draw (5,5)-- (5,3);
+\draw[dashed] (5,0)-- (6.5,4.77);
+\draw (5,3)-- (6.5,4.77);
+\draw (4.5,4.12) node[anchor=north west] {$r$};
+\draw (4.45,1.84) node[anchor=north west] {$R$};
+\begin{scriptsize}
+\fill [color=black] (5,0) circle (1.5pt);
+\fill [color=red] (5,5) circle (1pt);
+\fill [color=black] (5,3) circle (1.5pt);
+\draw[color=qqqqff] (4.75,3.25) node {$T$};
+\fill [color=red] (6.5,4.77) circle (1pt);
+\draw[color=qqwuqq] (5.625,3.25) node {$\alpha_0$};
+\draw[color=qqwuqq] (5.375,0.25) node {$\alpha$};
+\fill [color=black] (5.75,4.94) circle (1.5pt);
+\draw[color=red] (6.07,5.15) node {$D$};
+\end{scriptsize}
+\end{tikzpicture}

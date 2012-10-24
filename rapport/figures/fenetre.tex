@@ -1,0 +1,42 @@
+%\newlength{\unit}
+%\newlength{\width}
+\setlength{\width}{\figurewidth}
+\setlength{\unit}{0.3\width}
+
+
+
+\definecolor{qqzzqq}{rgb}{0,0.6,0}
+\definecolor{ffqqqq}{rgb}{1,0,0}
+\definecolor{qqqqcc}{rgb}{0,0,0.8}
+\definecolor{uququq}{rgb}{0.25,0.25,0.25}
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=\unit,y=\unit]
+\draw[color=black, dashed] (-1,0) -- (1,0);
+%\foreach \x in {-1,-0.5,0.5,1}
+%\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+%\draw[color=black] (0,-1.36) -- (0,1.28);
+%\foreach \y in {-1,-0.5,0.5,1}
+%\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+%\draw[color=black] (0,0.125) node[right] {\footnotesize $O$};
+\clip(-1.44,-1.36) rectangle (1.31,1.28);
+\draw [shift={(-1.25,-1)},color=qqqqcc,fill=qqqqcc,fill opacity=0.1] (0,0) -- (0:0.18) arc (0:75.07:0.18) -- cycle;
+\draw [->] (-1.25,-1) -- (-0.85,-1);
+\draw [->] (-1.25,-1) -- (-1.05,-0.25);
+\draw [color=red,domain=-.486:0.0133] plot(\x,{(--0.19--0.75*\x)/0.2});
+\draw [color=red,densely dotted,domain=-0.0368:-.5295] plot(\x,{(--0.19--0.75*(\x+0.05))/0.2});
+\draw [color=red,dotted,domain=-0.0876:-.5720] plot(\x,{(--0.19--0.75*(\x+0.1))/0.2});
+\draw [color=red,loosely dotted,domain=-.13926:-.6138] plot(\x,{(--0.19--0.75*(\x+0.15))/0.2});
+%\draw [color=qqzzqq,domain=-1.44:1.31] plot(\x,{(-0-0.2*\x)/0.75});
+\draw [->, color=red] (-0.43,-0.67) -- (-0.06,-0.77);
+%\draw [->] (-0.43,-0.67) -- (-0.2,0.18);
+\begin{scriptsize}
+\fill [color=black] (0,0) circle (1.5pt);
+%\draw[color=uququq] (0.05,0.08) node {$O$};
+\draw[color=black] (-0.87,-0.92) node {$\omegaT$};
+\draw[color=black] (-1,-0.61) node {$\omegaD$};
+\draw[color=qqqqcc] (-1.15,-0.92) node {$\psi$};
+\draw[color=black] (0.13,-0.66) node {$\omegaT \sin(\psi)$};
+%\draw[color=black] (0.15,-0.3) node {$\omegaD + \omegaT \cos(\psi)$};
+\draw [line width=1pt] (0,0) circle (1);
+\end{scriptsize}
+\end{tikzpicture}

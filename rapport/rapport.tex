@@ -1,6 +1,5 @@
 \documentclass[11pt,a4paper,reqno]{amsart}
-\setlength{\textwidth}{125mm}
-\setlength{\textheight}{195mm}
+\usepackage[french]{babel}
 \usepackage{fullpage}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -11,40 +10,70 @@
 \usepackage{enumerate}
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{url}
+\usepackage{multicol}
+
 \newcommand{\eps}{\varepsilon}
+
+\newcommand{\participant}[3]{%
+	\begin{center}
+		#1 \footnotesize
+		
+		#2
+		
+		\url{#3}
+	\end{center}
+	\vspace{0.5em}
+}
+
+\title{Observation de débris}
 \author{Nicolas Bonnotte, Maxime Chupin, Tony Février,\\ Antoine Levitt,
   Benjamin Marteau, Vladimir Salnikov}
 
+
 \begin{document}
-\title{Observation de débris}
 
 \maketitle
+
+
 \begin{abstract}
   ...
 \end{abstract}
 
 % \tableofcontents
+
 \section{Contexte}
-Ce travail a été réalisé dans le cadre de la 4ème édition de la
-Semaine d'Etude Mathématiques et Entreprises (SEME), qui s'est tenue à
-dans les locaux de l'Institut Henri Poincaré (IHP) à Paris du Lundi 15
-au Vendredi 19 octobre 2012. Le groupe souhaite remercier les
-organisateurs de la SEME, ainsi que Astrium et plus précisément Max
+
+Ce travail a été réalisé dans le cadre de la 4\ieme{} 
+Semaine d'étude mathématiques et entreprises (\textsc{seme}), qui s'est tenue à
+dans les locaux de l'Institut Henri Poincaré (\textsc{ihp}) à Paris du lundi 15
+au vendredi 19 octobre 2012. Le groupe souhaite remercier les
+organisateurs de la \textsc{seme}, ainsi que Astrium et plus précisément Max
 Cerf pour avoir proposé ce sujet, que nous avons trouvé intéressant et
 riche.
 
-Les participants sont:
-\begin{itemize}
-\item Nicolas Bonnotte
-\item Maxime Chupin
-\item Tony Février
-\item Antoine Levitt, doctorant à l'Université Paris Dauphine, \url{levitt@ceremade.dauphine.fr}
-\item Benjamin Marteau
-\item Vladimir Salnikov
-\end{itemize}
-(rajoutez vos affiliations)
+\begin{multicols}{2}
+\participant{Nicolas Bonnotte}{doctorant à l'Université Paris-Sud}{nicolas.bonnotte@math.u-psud.fr}
+\participant{Maxime Chupin}{}{}
+\participant{Tony Février}{}{}
+\participant{Antoine Levitt}{doctorant à l'Université Paris Dauphine}{levitt@ceremade.dauphine.fr}
+\participant{Benjamin Marteau}{}{}
+\participant{Vladimir Salnikov}{}{}
+% rajoutez vos affiliations :
+% \participant{Prénom nom}{Affiliation}{Adresse électronique}
+\end{multicols}
+
+
+
 \section{Introduction}
-\section{Observation du débris}
+
+
+
+%\section{Observation du débris}
+
+\input{nicolas.tex}
+
+
+
 \section{Conditions d'éclairement}
 \section{Ergodicité}
 Les calculs que nous avons faits donnent la probabilité $p$ qu'étant
