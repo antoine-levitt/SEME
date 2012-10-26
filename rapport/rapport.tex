@@ -1,45 +1,117 @@
-\documentclass[11pt,a4paper,reqno]{amsart}
-\usepackage[french]{babel}
-\usepackage{fullpage}
+\documentclass[a4paper,11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[percent]{overpic}
+\usepackage[frenchb]{babel}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{eurosym}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amsthm}
 \usepackage{pgf,tikz}
 \usetikzlibrary{arrows}
 \usepackage{enumerate}
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{url}
 \usepackage{multicol}
-
 \newcommand{\eps}{\varepsilon}
 
-\newcommand{\participant}[3]{%
-	\begin{center}
-		#1 \footnotesize
-		
-		#2
-		
-		\url{#3}
-	\end{center}
-	\vspace{0.5em}
-}
 
-\title{Observation de débris}
-\author{Nicolas Bonnotte, Maxime Chupin, Tony Février,\\ Antoine Levitt,
-  Benjamin Marteau, Vladimir Salnikov}
+\numberwithin{section}{part}
+\renewcommand{\thesection}{\arabic{section}}
 
+\setlength{\textwidth}{15cm} \setlength{\hoffset}{-1.50cm}
+\setlength{\textheight}{630pt} \setlength{\voffset}{-1.4cm}
+
+\selectlanguage{french}
 
 \begin{document}
 
-\maketitle
+%% Debut couverture
+ \setcounter{page}{0}
+ \thispagestyle{empty}
+\begin{center}
+\sffamily
+ {\LARGE \sc Semaine d'Etude Maths--Entreprises 4} \\
+%\vspace*{0.5cm}
+\vfill
+ {\large  15--19 octobre 2012, Institut Henri Poincaré (Paris)}
+\end{center}
+\vfill
+\begin{center}
+ \LARGE \textsf{Observation de débris spatiaux}
+\end{center}
+\vspace*{0.5cm}
+\begin{center}
+ \large \sffamily
+\begin{tabular}{cc}
+         Nicolas \textsc{Bonnotte$^{a}$} & Maxime \textsc{Chupin$^{b}$} \\
+         Tony \textsc{Février$^{c}$} & Antoine \textsc{Levitt$^{d}$} \\ 
+         Benjamin \textsc{Marteau$^{e}$} & Vladimir \textsc{Salnikov$^{f}$}
+   \end{tabular}
+\end{center}
+\vfill
+\centerline{\footnotesize\it $^{a}$ Université Paris-Sud,\url{nicolas.bonnotte@math.u-psud.fr}}
+\centerline{\footnotesize\it $^{b}$ Laboratoire de Mathématiques xxxxxxxxxxxxx, France}
+\centerline{\footnotesize\it $^{c}$ Laboratoire de Mathématiques xxxxxxxxxxxxx, France}
+\centerline{\footnotesize\it $^{d}$ Université Paris Dauphine, \url{levitt@ceremade.dauphine.fr}}
+\centerline{\footnotesize\it $^{e}$ Laboratoire de Mathématiques
+  xxxxxxxxxxxxx, France}
+\centerline{\footnotesize\it $^{f}$ Laboratoire de Mathématiques xxxxxxxxxxxxx, France}
 
+% \begin{multicols}{2}
+% \participant{Nicolas Bonnotte}{doctorant à l'Université Paris-Sud}{nicolas.bonnotte@math.u-psud.fr}
+% \participant{Maxime Chupin}{}{}
+% \participant{Tony Février}{}{}
+% \participant{Antoine Levitt}{doctorant à l'Université Paris Dauphine}{levitt@ceremade.dauphine.fr}
+% \participant{Benjamin Marteau}{}{}
+% \participant{Vladimir Salnikov}{}{}
+% % rajoutez vos affiliations :
+% % \participant{Prénom nom}{Affiliation}{Adresse électronique}
+% \end{multicols}
 
-\begin{abstract}
-  ...
-\end{abstract}
+\vfill
 
-% \tableofcontents
+\hspace{1cm}Sujet propos\'e par~:
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[scale=.4]{LOGO_EADS_ASTRIUM.jpg} 
+\end{tabular}
+\end{center}
+\begin{center}
+  \large \sffamily Correspondant : Max \textsc{Lecerf} (EADS)
+\end{center}
+\vfill
+\vspace{3cm}
+\begin{center}
+\begin{tabular}{ccc}
+\includegraphics[scale=0.9]{logo_GDR_ME}&
+\includegraphics[scale=1.0]{logo_CNRS}&
+\includegraphics[scale=0.05]{logo_AMIES}
+\includegraphics[scale=0.4]{logo_LMV}
+\end{tabular}
+\end{center}
+%% Fin couverture
+
+\newpage
+ \setcounter{page}{0}
+\thispagestyle{empty}
+\begin{center}
+
+\abstract{blabla......}
+\vfill
+Mots clés :
+
+\vfill
+Num\'ero de publication : SEME00X-201X-0X-X
+\end{center}
+\newpage
+
 
 \section{Contexte}
 
@@ -51,16 +123,16 @@ organisateurs de la \textsc{seme}, ainsi que Astrium et plus précisément Max
 Cerf pour avoir proposé ce sujet, que nous avons trouvé intéressant et
 riche.
 
-\begin{multicols}{2}
-\participant{Nicolas Bonnotte}{doctorant à l'Université Paris-Sud}{nicolas.bonnotte@math.u-psud.fr}
-\participant{Maxime Chupin}{}{}
-\participant{Tony Février}{}{}
-\participant{Antoine Levitt}{doctorant à l'Université Paris Dauphine}{levitt@ceremade.dauphine.fr}
-\participant{Benjamin Marteau}{}{}
-\participant{Vladimir Salnikov}{}{}
-% rajoutez vos affiliations :
-% \participant{Prénom nom}{Affiliation}{Adresse électronique}
-\end{multicols}
+% \begin{multicols}{2}
+% \participant{Nicolas Bonnotte}{doctorant à l'Université Paris-Sud}{nicolas.bonnotte@math.u-psud.fr}
+% \participant{Maxime Chupin}{}{}
+% \participant{Tony Février}{}{}
+% \participant{Antoine Levitt}{doctorant à l'Université Paris Dauphine}{levitt@ceremade.dauphine.fr}
+% \participant{Benjamin Marteau}{}{}
+% \participant{Vladimir Salnikov}{}{}
+% % rajoutez vos affiliations :
+% % \participant{Prénom nom}{Affiliation}{Adresse électronique}
+% \end{multicols}
 
 
 
@@ -190,4 +262,15 @@ Limitations, perspectives :
   ``fast-forward'' de la simulation.
 \end{itemize}
 
+
+
+%\section*{Remerciements}
+
+
+
+\begin{thebibliography}{99}
+
+\bibitem{Livre}
+dsgfg fg fgf hflskgsjfg rghrflkfjvhfdl f glfg jslgjflsjkgl fkj fgl sjhdlfjghlsgj
+\end{thebibliography}
 \end{document}
