@@ -147,6 +147,79 @@ riche.
 
 
 \section{Conditions d'éclairement}
+
+Dans cette partie on se place dans un rep\`ere g\'eocentrique qui tourne \`a la vitesse de rotation de la Terre autour du soleil. Ainsi on peut voir le mouvement du soleil relativement \`a la Terre comme une simple variation de l'incidence $i_S$ de ces rayons.  La figure \ref{ombre} repr\'esente ce rep\`ere : la Terre est en rouge, la sph\`ere transparente est celle contenant le d\'ebris et en bleu, on observe le c\^one d'ombre g\'en\'er\'e par les rayons incidents. 
+
+ \begin{figure}[h]\label{ombre}
+    \centering
+    \includegraphics[width=.6\textwidth]{figures/ombre.pdf}
+    \caption{Proportion de zone observable pendant un an}
+ \end{figure}
+ 
+\vspace{0.5cm} Ainsi les saisons sont déterminées par une variation de l'angle d'incidence entre le plan équatorial et les rayons solaires.
+On modélise dans notre repère cette variation par $i_{S}(t)= i_{max}\cos(\omega_{s}t)$ où $i_{max}=23.75^o$ et $\displaystyle{\omega_s=\frac{2\pi}{T_s}}$. \\
+ 
+L'objectif de cette partie est de d\'eterminer la proportion de ciel observable en prenant en compte les contraintes suivantes : 
+
+\begin{itemize}
+\item Le d\'ebris doit \^etre \'eclair\'e par le soleil. 
+\item Le t\'elescope doit \^etre dans la nuit.
+\end{itemize}
+
+\vspace{0.5cm}
+
+Ces deux contraintes s"int\'egrent au mod\'ele par l'interm\'ediaire de deux angles d\'ependant du temps $t$ : $\beta(t)$ repr\'esentant le c\^one d'ombre auquel ne doit pas appartenir le d\'ebris, $\delta(t)$ permettant de d\'elimiter la nuit du jour . Afin de mieux voir o\`u interviennent ces deux angles, on s'int\'eresse \`a deux coupes horizontales repr\'esent\'ees en rouge dans la figure \ref{coupehor}:
+\begin{itemize}
+\item celle incluant la trajectoire du t\'elescope (coupe de latitude $\varphi$).
+\item celle contenant le cercle des points o\`u le d\'ebris sera observable par le t\'elescope (les intersections entre les droites du z\'enith du t\'elescope et la sph\`ere de motion du d\'ebris).
+\end{itemize}
+
+\begin{figure}\label{coupehor}
+\begin{center}
+\scriptsize
+\def\figurewidth{0.6\linewidth}
+\input{figures/coupeshor.tex}
+\caption{Rapport entre les angles $\alpha$ et $\alpha_0$} \label{alpha}
+\end{center}
+\end{figure}
+
+Ces deux coupes horizontales sont celles des figures \ref{coupehorbeta} et \ref{coupehordelta}. Ainsi le t\'elescope doit non seulement \^etre hors du jour (il lui reste $\pi-2\delta(t)$ de p\'erim\`etre disponible) mais aussi il ne doit pas pointer dans le c\^one d'ombre (enlever $2\beta(t))$ de p\'erim\`etre.
+
+\begin{figure}\label{coupehorbeta}
+\begin{center}
+\scriptsize
+\def\figurewidth{0.6\linewidth}
+\input{figures/coupehorbeta.tex}
+\caption{Rapport entre les angles $\alpha$ et $\alpha_0$} \label{alpha}
+\end{center}
+\end{figure}
+
+\begin{figure}\label{coupehordelta}
+\begin{center}
+\scriptsize
+\def\figurewidth{0.6\linewidth}
+\input{figures/coupehordelta.tex}
+\caption{Rapport entre les angles $\alpha$ et $\alpha_0$} \label{alpha}
+\end{center}
+\end{figure}
+
+La proportion de zone observable par le t\'elescope est donc donn\'ee par $$\displaystyle{p_{V}(t,\varphi)=\frac{\pi-2\beta(t)-2\delta(t)}{2\pi}}.$$ \\
+\\
+Des arguments de g\'eom\'etrie \'elementaires  nous permettent d'obtenir les formules suivantes pour ces deux angles caract\'eristiques : \\
+
+\begin{itemize}
+\item $\displaystyle{\beta(t)=\arccos\left(\frac{\sqrt{2rR+r^2}\cos(i_s(t))}{(R+r)\sin(\varphi)}\right)}$.
+\item $\displaystyle{\delta(t)=\arcsin\left(\frac{|\tan(i_s(t))|}{\tan(\varphi)}\right)}$.
+\end{itemize}
+
+\vspace{0.5cm}
+\noindent o\`u $R$ et $R+r$ d\'esignent respectivement le rayon de la Terre et de l'orbite du d\'ebris.\\
+
+Munis de ces r\'esultats,  nous avons ainsi pu d\'eterminer pour chaque latitude $\varphi$ la moyenne de proportion de zone observable sur un an, le but \'etant de d\'eterminer la latitude id\'eale de placement du t\'elescope. \\
+
+A SUIVRE AVEC LES FIGURES DEFINITIVES....
+
+
 \section{Ergodicité}
 Les calculs que nous avons faits donnent la probabilité $p$ qu'étant
 donné un débris de paramètres $a_{D}$ et $i_{D}$ positionné
