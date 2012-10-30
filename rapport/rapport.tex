@@ -295,24 +295,43 @@ binomiale $B(n,\beta)$. Cela implique par exemple
   P(N(n) \geq 1) = 1 - (1-\beta)^{n}.
 \end{align}
 
-Le passage du modèle déterministe au modèle probabiliste pose
-néanmoins problème. Même si le théorème \eqref{largenumbers} peut
-laisser penser que, pour presque tout $\theta$, (et donc pour toutes
-les valeurs physiques) on va observer un débris en un temps de l'ordre
-de $1/\beta$, ce n'est pas toujours le cas. Pour par exemple $\theta =
-1/2 + \eps$, avec $\eps$ petit, un débris placé avec un angle initial
-$\theta_{0}$ proche mais plus grand que $1/2 + \beta$ va être observé
-au bout d'un temps de l'ordre de $1/\eps$.
+La question est de savoir si des estimations semblables peuvent être
+obtenues pour le modèle déterministe. Ce problème est un sujet d'étude
+en théorie ergodique. Un théorème de Kesten\cite{kesten} montre que si
+$\theta$, $\theta_{0}$ sont distribués uniformément sur $[0,1]$ et
+$\beta$ est irrationnel, alors le nombre $N(n)$ d'observations en $n$
+itérations suit pour $n$ grand la loi
+\begin{align}
+  N(n) \approx n \beta + \frac {\rho_{0}}\beta \log n\; \mathcal C,
+\end{align}
+où $\rho_{0}$ est une constante universelle\footnote{le théorème est également
+valable pour $\beta$ rationnel, mais alors le facteur correctif en
+$\rho_{0}$ dépend non-trivialement de $\beta$}, et $\mathcal C$ est
+la distribution de Cauchy, de densité
+\begin{align}
+  f_{\mathcal C}(x) = \frac 1 \pi \frac 1 {1+x^{2}}
+\end{align}
 
-Les simulations numériques que nous avons effectuées montrent que
-l'approximation aléatoire est une bonne approximation, mais ne permet
-pas de rendre compte de certains phénomènes (certains débris mettent
-plus de temps à se laisser observer que dans le modèle aléatoire). La
-question de la compréhension fine de ce phénomène est une question
-ouverte intéressante du point de vue à la fois théorique (théorie
-ergodique) et pratique (pour se prémunir de la possibilité de ne pas
-observer certains débris aussi rapidement que ce que prédit l'approche
-probabiliste).
+La distribution de Cauchy a des queues extrêmement épaisses (sa
+moyenne n'est même pas définie). En particulier, le théorème implique
+que, pour $n$ grand,
+\begin{align}
+  P(N(n) = 0) \approx \frac {\log n}{\rho \beta \pi n}
+\end{align}
+
+Cette décroissance en $\frac {\log n} n$ est extrêmement lente (elle
+est à comparer avec la décroissance exponentielle en $(1-p)^{n}$ si
+les observations étaient indépendantes d'un jour à l'autre).
+
+% Les simulations numériques que nous avons effectuées montrent que
+% l'approximation aléatoire est une bonne approximation, mais ne permet
+% pas de rendre compte de certains phénomènes (certains débris mettent
+% plus de temps à se laisser observer que dans le modèle aléatoire). La
+% question de la compréhension fine de ce phénomène est une question
+% ouverte intéressante du point de vue à la fois théorique (théorie
+% ergodique) et pratique (pour se prémunir de la possibilité de ne pas
+% observer certains débris aussi rapidement que ce que prédit l'approche
+% probabiliste).
 
 \section{Résultats numériques}
 
@@ -342,8 +361,7 @@ Limitations, perspectives :
 
 
 \begin{thebibliography}{99}
-
-\bibitem{Livre}
-dsgfg fg fgf hflskgsjfg rghrflkfjvhfdl f glfg jslgjflsjkgl fkj fgl sjhdlfjghlsgj
+\bibitem{kesten}{Kesten, H. (1960). Uniform distribution mod 1. The Annals of
+    Mathematics, 71(3), 445-471.}
 \end{thebibliography}
 \end{document}
