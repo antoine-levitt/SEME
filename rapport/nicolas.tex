@@ -69,7 +69,7 @@ On note $\alpha$ le demi-angle de d'ouverture du télescope, ou plutôt le demi-
 \end{figure}
 
 
-\subsection{Calcul approché du temps annuel d'observation}
+\subsection{Calcul approché de la durée journalière d'observation}
 
 Supposons que l'orbite apparaisse dans la visée du télescope avec un angle $\psi$ vis-à-vis de l'horizontale. Elle semble alors balayer la fenêtre d'observation avec une vitesse $\omegaT \sin(\psi)$ (voir figure \ref{fenetre}). Il lui faut donc un temps $t$ pour traverser entièrement celle-ci, avec $t$ donné par la formule
 \[ t = \frac{2\alpha}{\omegaT \sin(\psi)}.\]
@@ -97,7 +97,7 @@ On peut montrer que
 \[ 
 \cos(\psi) = \frac{\cos(\iD)}{\cos(\iT)}.
 \]
-Puisqu'il y a deux observations par an, le temps annuel d'observation de l'orbite est
+Puisqu'il y a deux observations par jour, la durée journalière d'observation de l'orbite est
 \[ \tau = \frac{4\alpha\cos(\iT)}{\sqrt{\sin(\iD)^2 - \sin(\iT)^2}}.\]
 Malheureusement, cette formule n'a probablement pas de sens si $\iD$ et $\iT$ sont trop rapprochés, ou si $\iT$ est trop proche de $\frac{\pi}{2}$. C'est pourquoi nous allons maintenant essayer une autre méthode, exacte celle-ci.
 
@@ -112,7 +112,7 @@ Malheureusement, cette formule n'a probablement pas de sens si $\iD$ et $\iT$ so
 
 
 
-\subsection{Calcul exact du temps annuel d'observation}
+\subsection{Calcul exact de la durée journalière d'observation}
 
 On rappelle que $\alpha$ désigne le demi-angle d'observation en équivalent pour un observateur situé au centre de la Terre. L'orbite est donc visible si et seulement si
 \[ -\sin(\alpha) \leq \vec{n} \cdot \vec{u} \leqslant \sin(\alpha).\]
@@ -129,7 +129,7 @@ Ceci entraîne
 %\[ \sin(\theta) \omegaT t_\pm - \frac{1}{2} \cos(\theta) \left(\omegaT t_\pm\right)^2 \approx \pm  \frac{\sin(\alpha)}{\cos(\iT)\sin(\iD)}.\]
 %Si $\iD \neq \iT$, alors $\sin(\theta) \neq 0$ et 
 %\[ t_\pm = \pm \frac{\alpha}{\omegaT} \frac{1}{\sqrt{\cos(\iT)\sin(\iD)}\sqrt{\cos(\iT)\sin(\iD) - \sin(\iT)\cos(\iD)}}\]
-Le taux d'observation sur un an est  $ \tau = 2| t_+ - t_-|$, en convenant que $t_\pm = 0$ lorsque la formule donnant $t_\pm$ n'a pas de sens. On a :
+Le taux d'observation sur une journée est  $ \tau = 2| t_+ - t_-|$, en convenant que $t_\pm = 0$ lorsque la formule donnant $t_\pm$ n'a pas de sens. On a :
 \begin{align*}
  \tau = & \frac{4\alpha}{\omegaT\sqrt{|\sin(\iD)^2 - \sin(\iT)^2}|} & \text{si $\iD \neq \pm\iT$ et $\iD \gg \alpha$}, \\
  \tau = &  \frac{2}{\omegaT}\sqrt{\frac{2 \alpha}{\cos(\iD)\sin(\iD)}} & \text{si $\iD = \pm\iT$ et $\iD \gg \alpha$}.
@@ -139,17 +139,17 @@ Le taux d'observation sur un an est  $ \tau = 2| t_+ - t_-|$, en convenant que $
 \scriptsize
 \begin{center}
 \def\svgwidth{0.5\linewidth}
- \input{figures/observabilite.tex}
+ \input{figures/observabilite2.pdf_tex}
  \vspace*{-2em}
-\caption{Temps annuel d'observation (en jours)} \label{observabilite}
+\caption{Durée journalière d'observation (en minutes)} \label{observabilite}
 \end{center}
 \end{figure}%
 
-La figure \ref{observabilite} montre le nombre de journées par an où l'orbite est visible. Cette durée ne dépend que de $|\iT|$ et de $\iD$. Lorsque $\iD=\iT=0$ ou $\iD=\iT=\frac{\pi}{2}$, l'orbite est en permanence visible : le premier cas correspond au télescope situé sur l'équateur avec une orbite équatoriale, le second au télescope au pôle Nord avec une orbite polaire. Lorsque $\iD < |\iT|-\alpha$, l'orbite n'est pas assez inclinée et n'est donc jamais visible par le télescope, situé lui à une latitude trop élevée. Lorsque $\iD=\iT$, l'orbite est visible au moins pendant 30 jours par an, pour $\iD = \iT = \frac{\pi}{4}$. Notons que si $\iD = \iT - \alpha/2$ et $\iT = \frac{\pi}{4}$, l'orbite est encore visible 22 jours par an.
- Lorsque $\iD = \frac{\pi}{2}$ et $\iT = 0$, c'est-à-dire pour une orbite polaire et un télescope à l'équateur, l'orbite n'est plus visible que 4 jours par an. 
+La figure \ref{observabilite} montre le nombre de minutes par jour où l'orbite est visible. Cette durée ne dépend que de $|\iT|$ et de $\iD$. Lorsque $\iD=\iT=0$ ou $\iD=\iT=\frac{\pi}{2}$, l'orbite est en permanence visible : le premier cas correspond au télescope situé sur l'équateur avec une orbite équatoriale, le second au télescope au pôle Nord avec une orbite polaire. Lorsque $\iD < |\iT|-\alpha$, l'orbite n'est pas assez inclinée et n'est donc jamais visible par le télescope, situé lui à une latitude trop élevée. Lorsque $\iD=\iT$, l'orbite est visible au moins pendant {\Huge DURÉE}, pour $\iD = \iT = \frac{\pi}{4}$. Notons que si $\iD = \iT - \alpha/2$ et $\iT = \frac{\pi}{4}$, l'orbite est encore visible  {\Huge DURÉE}.
+ Lorsque $\iD = \frac{\pi}{2}$ et $\iT = 0$, c'est-à-dire pour une orbite polaire et un télescope à l'équateur, l'orbite n'est plus visible que 16 minutes par jour. 
 
 
-\subsection{Partie de l'orbite observée chaque année}
+\subsection{Partie de l'orbite observée chaque jour}
 
 Lorsque l'on voit l'orbite durant un temps $\mathrm{d}t$, celle-ci tournant avec une vitesse $\omegaD$, on observe en fait une proportion $\mathrm{d}p = \frac{\omegaD}{2\pi} \mathrm{d} t = \frac{\mathrm{d}t}{\TD}$. En supposant que, lorsque deux observations sont possibles, on ne voit jamais la même chose (ce qui donne donc une borne supérieure), la proportion de l'orbite observée sur un an est donc
 \[ p = \frac{\omegaD \tau}{2\pi} = \frac{\tau}{\TD}.\]

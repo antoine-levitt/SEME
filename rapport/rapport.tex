@@ -30,6 +30,8 @@
 
 \selectlanguage{french}
 
+\newcommand{\affil}[1]{\up{\textit{\textrm{#1}}}}
+
 \begin{document}
 
 %% Debut couverture
@@ -37,7 +39,7 @@
  \thispagestyle{empty}
 \begin{center}
 \sffamily
- {\LARGE \sc Semaine d'Etude Maths--Entreprises 4} \\
+ {\LARGE \sc Semaine d'\'Etude Maths--Entreprises 4} \\
 %\vspace*{0.5cm}
 \vfill
  {\large  15--19 octobre 2012, Institut Henri Poincaré (Paris)}
@@ -50,19 +52,17 @@
 \begin{center}
  \large \sffamily
 \begin{tabular}{cc}
-         Nicolas \textsc{Bonnotte$^{a}$} & Maxime \textsc{Chupin$^{b}$} \\
-         Tony \textsc{Février$^{c}$} & Antoine \textsc{Levitt$^{d}$} \\ 
-         Benjamin \textsc{Marteau$^{e}$} & Vladimir \textsc{Salnikov$^{f}$}
+         Nicolas \textsc{Bonnotte}\affil{a} & Maxime \textsc{Chupin}\affil{b} \\
+         Tony \textsc{Février}\affil{a} & Antoine \textsc{Levitt}\affil{c} \\ 
+         Benjamin \textsc{Marteau}\affil{d} & Vladimir \textsc{Salnikov}\affil{e}
    \end{tabular}
 \end{center}
 \vfill
-\centerline{\footnotesize\it $^{a}$ Université Paris-Sud,\url{nicolas.bonnotte@math.u-psud.fr}}
-\centerline{\footnotesize\it $^{b}$ Laboratoire de Mathématiques xxxxxxxxxxxxx, France}
-\centerline{\footnotesize\it $^{c}$ Laboratoire de Mathématiques xxxxxxxxxxxxx, France}
-\centerline{\footnotesize\it $^{d}$ Université Paris Dauphine, \url{levitt@ceremade.dauphine.fr}}
-\centerline{\footnotesize\it $^{e}$ Laboratoire de Mathématiques
-  xxxxxxxxxxxxx, France}
-\centerline{\footnotesize\it $^{f}$ Laboratoire de Mathématiques xxxxxxxxxxxxx, France}
+\centerline{\footnotesize\it \affil{a} Université Paris-Sud, \url{nicolas.bonnotte@math.u-psud.fr}}
+\centerline{\footnotesize\it \affil{b} Laboratoire de Mathématiques xxxxxxxxxxxxx, France}
+\centerline{\footnotesize\it \affil{c} Université Paris Dauphine, \url{levitt@ceremade.dauphine.fr}}
+\centerline{\footnotesize\it \affil{d}  Laboratoire de Mathématiques xxxxxxxxxxxxx, France}
+\centerline{\footnotesize\it \affil{e} Laboratoire de Mathématiques xxxxxxxxxxxxx, France}
 
 % \begin{multicols}{2}
 % \participant{Nicolas Bonnotte}{doctorant à l'Université Paris-Sud}{nicolas.bonnotte@math.u-psud.fr}
@@ -77,7 +77,7 @@
 
 \vfill
 
-\hspace{1cm}Sujet propos\'e par~:
+\hspace{1cm}Sujet propos\'e par :
 \begin{center}
 \begin{tabular}{cc}
 \includegraphics[scale=.4]{LOGO_EADS_ASTRIUM.jpg} 
@@ -88,14 +88,10 @@
 \end{center}
 \vfill
 \vspace{3cm}
-\begin{center}
-\begin{tabular}{ccc}
-\includegraphics[scale=0.9]{logo_GDR_ME}&
-\includegraphics[scale=1.0]{logo_CNRS}&
-\includegraphics[scale=0.05]{logo_AMIES}
-\includegraphics[scale=0.4]{logo_LMV}
-\end{tabular}
-\end{center}
+\includegraphics[width=0.27\linewidth]{logo_GDR_ME} \hfill
+\includegraphics[width=0.12\linewidth]{logo_CNRS} \hfill
+\includegraphics[width=0.27\linewidth]{logo_AMIES} \hfill
+\includegraphics[width=0.30\linewidth]{logo_LMV}
 %% Fin couverture
 
 \newpage
