@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[frenchb]{babel}
+\usepackage[french]{babel}
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{hyperref}
@@ -20,7 +20,8 @@
 \usepackage{url}
 \usepackage{multicol}
 \newcommand{\eps}{\varepsilon}
-
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
 
 \numberwithin{section}{part}
 \renewcommand{\thesection}{\arabic{section}}
@@ -28,13 +29,16 @@
 \setlength{\textwidth}{15cm} \setlength{\hoffset}{-1.50cm}
 \setlength{\textheight}{630pt} \setlength{\voffset}{-1.4cm}
 
-\selectlanguage{french}
-
-\newcommand{\affil}[1]{\up{\textit{\textrm{#1}}}}
+%\selectlanguage{french}
 
 \begin{document}
 
 %% Debut couverture
+%%%%% NICOLAS 1/2 %%%%%
+\let\oldtextsc\textsc
+\let\textsc\uppercase
+\newcommand{\affil}[1]{\up{#1}}
+%%%%%%%%%%%%%%%%%
  \setcounter{page}{0}
  \thispagestyle{empty}
 \begin{center}
@@ -58,11 +62,12 @@
    \end{tabular}
 \end{center}
 \vfill
-\centerline{\footnotesize\it \affil{a} Université Paris-Sud, \url{nicolas.bonnotte@math.u-psud.fr}}
-\centerline{\footnotesize\it \affil{b} Laboratoire de Mathématiques xxxxxxxxxxxxx, France}
-\centerline{\footnotesize\it \affil{c} Université Paris Dauphine, \url{levitt@ceremade.dauphine.fr}}
-\centerline{\footnotesize\it \affil{d}  Laboratoire de Mathématiques xxxxxxxxxxxxx, France}
-\centerline{\footnotesize\it \affil{e} Laboratoire de Mathématiques xxxxxxxxxxxxx, France}
+% chez moi, l'usage de l'italique rend de nouveau les points actifs dans \url{}, et les fait donc suivre d'un espace insécable (!)
+\centerline{\footnotesize \affil{a} Université Paris-Sud, \url{nicolas.bonnotte@math.u-psud.fr}}
+\centerline{\footnotesize \affil{b} Laboratoire de Mathématiques xxxxxxxxxxxxx, France}
+\centerline{\footnotesize \affil{c} Université Paris Dauphine, \url{levitt@ceremade.dauphine.fr}}
+\centerline{\footnotesize \affil{d}  Laboratoire de Mathématiques xxxxxxxxxxxxx, France}
+\centerline{\footnotesize \affil{e} Laboratoire de Mathématiques xxxxxxxxxxxxx, France}
 
 % \begin{multicols}{2}
 % \participant{Nicolas Bonnotte}{doctorant à l'Université Paris-Sud}{nicolas.bonnotte@math.u-psud.fr}
@@ -93,6 +98,9 @@
 \includegraphics[width=0.27\linewidth]{logo_AMIES} \hfill
 \includegraphics[width=0.30\linewidth]{logo_LMV}
 %% Fin couverture
+%%%%% NICOLAS 2/2 %%%%%
+\let\textsc\oldtextsc
+%%%%%%%%%%%%%%%%%
 
 \newpage
  \setcounter{page}{0}
@@ -329,7 +337,9 @@ les observations étaient indépendantes d'un jour à l'autre).
 % observer certains débris aussi rapidement que ce que prédit l'approche
 % probabiliste).
 
-\section{Résultats numériques}
+%\section{Simulation numérique}
+
+\input{vladimir.tex}
 
 \section{Conclusion}
 Limitations, perspectives :
@@ -352,8 +362,13 @@ Limitations, perspectives :
 
 
 
-%\section*{Remerciements}
+\section{Remerciements}
 
+\appendix
+
+%\section{Code des simulations numériques}
+
+\input{files.tex}
 
 
 \begin{thebibliography}{99}
