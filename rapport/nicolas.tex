@@ -56,23 +56,23 @@ Supposons que l'orbite soit un cercle de centre $O$, de rayon $\rayonD$, dans un
 À $t=0$, le télescope coupe le plan de l'orbite, et cela entraîne $\vec{n}\cdot \vec{u} = 0$. L'angle $\theta$ doit donc vérifier la relation
 \[ \cos(\theta) = - \frac{\sin(\iT)\cos(\iD)}{\cos(\iT)\sin(\iD)}.\]
 
-On note $\alpha$ le demi-angle de d'ouverture du télescope, ou plutôt le demi-angle qui serait celui sous lequel un observateur placé au centre de la Terre verrait la même chose à l'altitude $\altitudeD$ que le télescope. Si $\alpha_0$ est l'ouverture réelle du télescope, on a (voir figure \ref{alpha}) :
-\[ \alpha = \frac{\rayonT}{\rayonD} \alpha_0.\]
+On note $\alpha$ le demi-angle de d'ouverture du télescope, ou plutôt le demi-angle qui serait celui sous lequel un observateur placé au centre de la Terre verrait la même chose à l'altitude $\altitudeD$ que le télescope. Si $\alpha_0$ est l'ouverture réelle du télescope, on a (voir figure \ref{nicolas:alpha}) :
+\[ \alpha = \frac{\rayonT}{\rayonD} \alpha_0 \approx 0,1\text{\degres}.\]
 
 \begin{figure}
 \begin{center}
 \scriptsize
 \def\figurewidth{0.6\linewidth}
 \input{figures/alpha.tex}
-\caption{Rapport entre les angles $\alpha$ et $\alpha_0$} \label{alpha}
+\caption{Rapport entre les angles $\alpha$ et $\alpha_0$} \label{nicolas:alpha}
 \end{center}
 \end{figure}
 
 
 \subsection{Calcul approché de la durée journalière d'observation}
 
-Supposons que l'orbite apparaisse dans la visée du télescope avec un angle $\psi$ vis-à-vis de l'horizontale. Elle semble alors balayer la fenêtre d'observation avec une vitesse $\omegaT \sin(\psi)$ (voir figure \ref{fenetre}). Il lui faut donc un temps $t$ pour traverser entièrement celle-ci, avec $t$ donné par la formule
-\[ t = \frac{2\alpha}{\omegaT \sin(\psi)}.\]
+Supposons que l'orbite apparaisse dans la visée du télescope avec un angle $\psi$ vis-à-vis de l'horizontale. Elle semble alors balayer la fenêtre d'observation avec une vitesse $\omegaT \sin(\psi)$ (voir figure \ref{nicolas:fenetre}). Il lui faut donc un temps $\tau_0$ pour traverser entièrement celle-ci, avec $\tau_0$ donné par la formule
+\[ \tau_0 = \frac{2\alpha}{\omegaT \sin(\psi)}.\]
 Cet angle $\psi$ est l'angle entre le vecteur vitesse du télescope $T$ et celui d'un débris $D$ situé sur l'orbite. 
 %On connait déjà $\overrightarrow{OT}$ ; quant à $\overrightarrow{OD}$, on sait qu'il se déplace dans un plan $(O, \vec{f}_1, \vec{f}_2)$ perpendiculaire à $\vec{n}$ sur un cercle de rayon $\rayonD$ de centre $O$ et de vitesse angulaire $\omegaD = \frac{2\pi}{\TD}$, et que $O$, $T$ et $D$ sont alignés pour $t=0$. Ceci nous suffit pour obtenir :
 %\[ \overrightarrow{OD} = (\rayonD)\vec{v} \qquad \text{avec} \qquad \vec{v} = \cos(\omegaD t) \vec{f}_1 + \sin(\omegaD t) \vec{f}_2\]
@@ -98,7 +98,7 @@ On peut montrer que
 \cos(\psi) = \frac{\cos(\iD)}{\cos(\iT)}.
 \]
 Puisqu'il y a deux observations par jour, la durée journalière d'observation de l'orbite est
-\[ \tau = \frac{4\alpha\cos(\iT)}{\sqrt{\sin(\iD)^2 - \sin(\iT)^2}}.\]
+\[ \tau = 2\tau_0 = \frac{4\alpha\cos(\iT)}{\sqrt{\sin(\iD)^2 - \sin(\iT)^2}}.\]
 Malheureusement, cette formule n'a probablement pas de sens si $\iD$ et $\iT$ sont trop rapprochés, ou si $\iT$ est trop proche de $\frac{\pi}{2}$. C'est pourquoi nous allons maintenant essayer une autre méthode, exacte celle-ci.
 
 \begin{figure}
@@ -106,7 +106,7 @@ Malheureusement, cette formule n'a probablement pas de sens si $\iD$ et $\iT$ so
 \scriptsize
 \def\figurewidth{0.6\linewidth}
 \input{figures/fenetre.tex}
-\caption{Fenêtre d'observation} \label{fenetre}
+\caption{Fenêtre d'observation} \label{nicolas:fenetre}
 \end{center}
 \end{figure}
 
@@ -115,38 +115,39 @@ Malheureusement, cette formule n'a probablement pas de sens si $\iD$ et $\iT$ so
 \subsection{Calcul exact de la durée journalière d'observation}
 
 On rappelle que $\alpha$ désigne le demi-angle d'observation en équivalent pour un observateur situé au centre de la Terre. L'orbite est donc visible si et seulement si
-\[ -\sin(\alpha) \leq \vec{n} \cdot \vec{u} \leqslant \sin(\alpha).\]
+\[ -\sin(\alpha) \leq \vec{n} \cdot \vec{u} \leq \sin(\alpha).\]
 Notons $t_\pm$ les deux instants les plus proches de $t=0$ tels que
 \[  \vec{n} \cdot \vec{u}(t_+) = \sin(\alpha) \qquad \text{et} \qquad  \vec{n} \cdot \vec{u}(t_-) = -\sin(\alpha).\] 
 Puisque $\alpha$ est petit, on a donc :
 \begin{multline*}
-\cos(\omegaT t_\pm) \cos(\iT) \sin(\iD) \cos(\theta) + \sin(\omegaT t_\pm) \cos(\iT)\sin(\iD)\sin(\theta) \\
+\cos(\omegaT t_\pm) \cos(\iT) \sin(\iD) \cos(\theta) + \sin(\omegaT t_\pm) \cos(\iT)\sin(\iD)\sin(\theta)
  = \pm\alpha -  \sin(\iT)\cos(\iD).
 \end{multline*}
 Ceci entraîne
 \[ \cos(\theta - \omegaT t_\pm) = \cos(\theta) \pm  \frac{\alpha}{\cos(\iT)\sin(\iD)}.\]
-%Si $t_\pm$ est petit, alors
-%\[ \sin(\theta) \omegaT t_\pm - \frac{1}{2} \cos(\theta) \left(\omegaT t_\pm\right)^2 \approx \pm  \frac{\sin(\alpha)}{\cos(\iT)\sin(\iD)}.\]
-%Si $\iD \neq \iT$, alors $\sin(\theta) \neq 0$ et 
-%\[ t_\pm = \pm \frac{\alpha}{\omegaT} \frac{1}{\sqrt{\cos(\iT)\sin(\iD)}\sqrt{\cos(\iT)\sin(\iD) - \sin(\iT)\cos(\iD)}}\]
-Le taux d'observation sur une journée est  $ \tau = 2| t_+ - t_-|$, en convenant que $t_\pm = 0$ lorsque la formule donnant $t_\pm$ n'a pas de sens. On a :
+Puisque $t_\pm$ est petit, 
+\[ \sin(\theta) \omegaT t_\pm - \frac{1}{2} \cos(\theta) \left(\omegaT t_\pm\right)^2 = \pm  \frac{\alpha}{\cos(\iT)\sin(\iD)},\]
+et on obtient donc
+\[ \omegaT t_\pm = A - \sqrt{A^2 \mp \frac{\alpha\cos(\iT)\sin(\iD)}{\sin^2(\iT)\cos^2(\iD)}} \qquad \text{avec} \qquad A=\frac{\cos(\iT)\sin(\iD)\sqrt{\sin^2(\iD)-\sin^2(\iT)}}{\sin^2(\iT)\cos^2(\iD)}\]
+Le taux d'observation sur une journée est  $ \tau = 2(t_+ - t_-)$, en convenant que $t_\pm = 0$ lorsque la formule donnant $t_\pm$ n'a pas de sens. On a :
+\[ \tau = \frac{2}{\omegaT} \left(  \sqrt{A^2 + \frac{\alpha\cos(\iT)\sin(\iD)}{\sin^2(\iT)\cos^2(\iD)}} - \sqrt{A^2 - \frac{\alpha\cos(\iT)\sin(\iD)}{\sin^2(\iT)\cos^2(\iD)}} \right).\]
+En particulier,
 \begin{align*}
- \tau = & \frac{4\alpha}{\omegaT\sqrt{|\sin(\iD)^2 - \sin(\iT)^2}|} & \text{si $\iD \neq \pm\iT$ et $\iD \gg \alpha$}, \\
- \tau = &  \frac{2}{\omegaT}\sqrt{\frac{2 \alpha}{\cos(\iD)\sin(\iD)}} & \text{si $\iD = \pm\iT$ et $\iD \gg \alpha$}.
+  \tau =  &\frac{2}{\omegaT}\sqrt{\frac{\alpha}{\cos(\iD)\sin(\iD)}} & \text{si $\iD = \iT$}, \\
+  \tau =  &\frac{2}{\omegaT}\frac{\alpha}{\sqrt{\sin(\iD)^2 - \sin(\iT)^2}} & \text{si $\iD > \iT \gg \alpha$}.
 \end{align*}%
 
 \begin{figure}
 \scriptsize
 \begin{center}
 \def\svgwidth{0.5\linewidth}
- \input{figures/observabilite2.pdf_tex}
+ \input{figures/observabilite3.pdf_tex}
  \vspace*{-2em}
-\caption{Durée journalière d'observation (en minutes)} \label{observabilite}
+\caption{Durée journalière d'observation (en minutes)} \label{nicolas:observabilite}
 \end{center}
 \end{figure}%
 
-La figure \ref{observabilite} montre le nombre de minutes par jour où l'orbite est visible. Cette durée ne dépend que de $|\iT|$ et de $\iD$. Lorsque $\iD=\iT=0$ ou $\iD=\iT=\frac{\pi}{2}$, l'orbite est en permanence visible : le premier cas correspond au télescope situé sur l'équateur avec une orbite équatoriale, le second au télescope au pôle Nord avec une orbite polaire. Lorsque $\iD < |\iT|-\alpha$, l'orbite n'est pas assez inclinée et n'est donc jamais visible par le télescope, situé lui à une latitude trop élevée. Lorsque $\iD=\iT$, l'orbite est visible au moins pendant {\Huge DURÉE}, pour $\iD = \iT = \frac{\pi}{4}$. Notons que si $\iD = \iT - \alpha/2$ et $\iT = \frac{\pi}{4}$, l'orbite est encore visible  {\Huge DURÉE}.
- Lorsque $\iD = \frac{\pi}{2}$ et $\iT = 0$, c'est-à-dire pour une orbite polaire et un télescope à l'équateur, l'orbite n'est plus visible que 16 minutes par jour. 
+La figure \ref{nicolas:observabilite} montre le nombre de minutes par jour où l'orbite est visible. Cette durée ne dépend que de $\iT$ et de $\iD$. Lorsque $\iD=\iT=0$ ou $\iD=\iT=\frac{\pi}{2}$, l'orbite est en permanence visible : le premier cas correspond au télescope situé sur l'équateur avec une orbite équatoriale, le second au télescope au pôle Nord avec une orbite polaire. Lorsque $\iD < \iT$, l'orbite n'est pas assez inclinée et n'est donc jamais visible par le télescope, situé lui à une latitude trop élevée. Lorsque $\iD = \frac{\pi}{2}$ et $\iT = 0$, c'est-à-dire pour une orbite polaire et un télescope à l'équateur, l'orbite n'est plus visible que 24 secondes par jour. 
 
 
 \subsection{Partie de l'orbite observée chaque jour}
