@@ -298,21 +298,21 @@ $\theta$, $\theta_{0}$ sont distribués uniformément sur $[0,1]$ et
 $\beta$ est irrationnel, alors le nombre $N(n)$ d'observations en $n$
 itérations suit pour $n$ grand la loi
 \begin{align}
-  N(n) \approx n \beta + \frac {\rho_{0}}\beta \log n\; \mathcal C,
+  N(n) \approx n \beta + {\rho} \log n\; \mathcal C,
 \end{align}
-où $\rho_{0}$ est une constante universelle\footnote{le théorème est également
-valable pour $\beta$ rationnel, mais alors le facteur correctif en
-$\rho_{0}$ dépend non-trivialement de $\beta$}, et $\mathcal C$ est
-la distribution de Cauchy, de densité
+où $\rho$ est une constante universelle\footnote{le théorème est
+  également valable pour $\beta$ rationnel, mais alors le facteur
+  $\rho$ dépend non-trivialement de $\beta$}, et $\mathcal C$ est la
+distribution de Cauchy, de densité
 \begin{align}
   f_{\mathcal C}(x) = \frac 1 \pi \frac 1 {1+x^{2}}
 \end{align}
 
 La distribution de Cauchy a des queues extrêmement épaisses (sa
 moyenne n'est même pas définie). En particulier, le théorème implique
-que, pour $n$ grand,
+que
 \begin{align}
-  P(N(n) = 0) \approx \frac {\log n}{n}
+  P(N(n) = 0) \approx_{n\to\infty} \frac {\rho}{\beta \pi}\frac{\log n}{n}
 \end{align}
 
 Cette décroissance en $\frac {\log n} n$ est extrêmement lente (elle
@@ -352,8 +352,8 @@ Limitations, perspectives :
 
 
 
-%\section*{Remerciements}
-
+\section*{Remerciements}
+Mathoverflow
 
 
 \begin{thebibliography}{99}
