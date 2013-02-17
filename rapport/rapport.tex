@@ -150,18 +150,19 @@ riche.
 
 
 
-\section{Conditions d'éclairement}
+
+\section{Conditions d'\'eclairement}
 
 Dans cette partie on se place dans un rep\`ere g\'eocentrique qui tourne \`a la vitesse de rotation de la Terre autour du soleil. Ainsi on peut voir le mouvement du soleil relativement \`a la Terre comme une simple variation de l'incidence $i_S$ de ces rayons.  La figure \ref{ombre} repr\'esente ce rep\`ere : la Terre est en rouge, la sph\`ere transparente est celle contenant le d\'ebris et en bleu, on observe le c\^one d'ombre g\'en\'er\'e par les rayons incidents. 
 
  \begin{figure}[h]\label{ombre}
     \centering
     \includegraphics[width=.6\textwidth]{figures/ombre.pdf}
-    \caption{Proportion de zone observable pendant un an}
+    \caption{C\^one d'ombre}
  \end{figure}
  
-\vspace{0.5cm} Ainsi les saisons sont déterminées par une variation de l'angle d'incidence entre le plan équatorial et les rayons solaires.
-On modélise dans notre repère cette variation par $i_{S}(t)= i_{max}\cos(\omega_{s}t)$ où $i_{max}=23.75^o$ et $\displaystyle{\omega_s=\frac{2\pi}{T_s}}$. \\
+\vspace{0.5cm} Ainsi les saisons sont d\'etermin\'ees par une variation de l'angle d'incidence entre le plan \'equatorial et les rayons solaires.
+On mod\'elise dans notre rep\`ere cette variation par $i_{S}(t)= i_{max}\cos(\omega_{s}t)$ o\`u $i_{max}=23.75^o$ et $\displaystyle{\omega_s=\frac{2\pi}{T_s}}$. \\
  
 L'objectif de cette partie est de d\'eterminer la proportion de ciel observable en prenant en compte les contraintes suivantes : 
 
@@ -178,34 +179,34 @@ Ces deux contraintes s"int\'egrent au mod\'ele par l'interm\'ediaire de deux ang
 \item celle contenant le cercle des points o\`u le d\'ebris sera observable par le t\'elescope (les intersections entre les droites du z\'enith du t\'elescope et la sph\`ere de motion du d\'ebris).
 \end{itemize}
 
-\begin{figure}\label{coupehor}
-\begin{center}
-\scriptsize
-\def\figurewidth{0.6\linewidth}
-\input{figures/coupeshor.tex}
-\caption{Rapport entre les angles $\alpha$ et $\alpha_0$} \label{alpha}
-\end{center}
-\end{figure}
+%\begin{figure}\label{coupehor}
+%\begin{center}
+%\scriptsize
+%\def\figurewidth{0.6\linewidth}
+%\input{figures/coupeshor.tex}
+%\caption{Rapport entre les angles $\alpha$ et $\alpha_0$} \label{alpha}
+%\end{center}
+%\end{figure}
 
 Ces deux coupes horizontales sont celles des figures \ref{coupehorbeta} et \ref{coupehordelta}. Ainsi le t\'elescope doit non seulement \^etre hors du jour (il lui reste $\pi-2\delta(t)$ de p\'erim\`etre disponible) mais aussi il ne doit pas pointer dans le c\^one d'ombre (enlever $2\beta(t))$ de p\'erim\`etre.
 
-\begin{figure}\label{coupehorbeta}
-\begin{center}
-\scriptsize
-\def\figurewidth{0.6\linewidth}
-\input{figures/coupehorbeta.tex}
-\caption{Rapport entre les angles $\alpha$ et $\alpha_0$} \label{alpha}
-\end{center}
-\end{figure}
-
-\begin{figure}\label{coupehordelta}
-\begin{center}
-\scriptsize
-\def\figurewidth{0.6\linewidth}
-\input{figures/coupehordelta.tex}
-\caption{Rapport entre les angles $\alpha$ et $\alpha_0$} \label{alpha}
-\end{center}
-\end{figure}
+%\begin{figure}\label{coupehorbeta}
+%\begin{center}
+%\scriptsize
+%\def\figurewidth{0.6\linewidth}
+%\input{figures/coupehorbeta.tex}
+%\caption{Rapport entre les angles $\alpha$ et $\alpha_0$} \label{alpha}
+%\end{center}
+%\end{figure}
+%
+%\begin{figure}\label{coupehordelta}
+%\begin{center}
+%\scriptsize
+%\def\figurewidth{0.6\linewidth}
+%\input{figures/coupehordelta.tex}
+%\caption{Rapport entre les angles $\alpha$ et $\alpha_0$} \label{alpha}
+%\end{center}
+%\end{figure}
 
 La proportion de zone observable par le t\'elescope est donc donn\'ee par $$\displaystyle{p_{V}(t,\varphi)=\frac{\pi-2\beta(t)-2\delta(t)}{2\pi}}.$$ \\
 \\
@@ -221,7 +222,21 @@ Des arguments de g\'eom\'etrie \'elementaires  nous permettent d'obtenir les for
 
 Munis de ces r\'esultats,  nous avons ainsi pu d\'eterminer pour chaque latitude $\varphi$ la moyenne de proportion de zone observable sur un an, le but \'etant de d\'eterminer la latitude id\'eale de placement du t\'elescope. \\
 
-A SUIVRE AVEC LES FIGURES DEFINITIVES....
+ \begin{figure}[h]\label{opt}
+    \centering
+    \includegraphics[width=.7\textwidth]{opt.png}
+    \caption{Proportion de zone observable pendant un an}
+ \end{figure}
+ 
+ On observe deux tendances dans le graphique de la proportion (\ref{opt}) : une premi\`ere partie ou celle-ci d\'ecroit (de la latitude $0$ \`a environ 0.4 radians) et une seconde ou elle cro\^it. Cette transition de phase correspond \`a la latitude du cercle polaire arctique. Il semble donc qu'il vaille mieux placer le t\'elescope au plus pr\`es possible des p\^oles.
+ Ce choix se doit d'\^etre nuanc\'e par la figure \ref{ecart} : on y trace les extremas de la proportion de zone observable en fonction de la latitude \`a laquelle on se trouve.
+ On constate que dans les zones les plus \'eclair\'ees (au-dessus du cercle polaire arctique selon le graphique pr\'ec\'edent), il y a des p\'eriodes au cours desquelles il fait exclusivement nuit.
+ On n'observe donc rien durant ce laps de temps.
+  \begin{figure}[h]\label{ecart}
+    \centering
+    \includegraphics[width=.7\textwidth]{ecart.png}
+    \caption{Extremas de la proportion de zone observable}
+ \end{figure}
 
 
 \section{Ergodicité}
