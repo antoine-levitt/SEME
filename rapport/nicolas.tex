@@ -56,7 +56,7 @@ Supposons que l'orbite soit un cercle de centre $O$, de rayon $\rayonD$, dans un
 À $t=0$, le télescope coupe le plan de l'orbite, et cela entraîne $\vec{n}\cdot \vec{u} = 0$. L'angle $\theta$ doit donc vérifier la relation
 \[ \cos(\theta) = - \frac{\sin(\iT)\cos(\iD)}{\cos(\iT)\sin(\iD)}.\]
 
-On note $\alpha$ le demi-angle de d'ouverture du télescope, ou plutôt le demi-angle qui serait celui sous lequel un observateur placé au centre de la Terre verrait la même chose à l'altitude $\altitudeD$ que le télescope. Si $\alpha_0$ est l'ouverture réelle du télescope, on a (voir figure \ref{nicolas:alpha}) :
+On note $\alpha$ le demi-angle de d'ouverture du télescope, ou plutôt le demi-angle qui serait celui sous lequel un observateur placé au centre de la Terre verrait la même chose à l'altitude $\altitudeD$ que le télescope. Si $\alpha_0$ est l'ouverture réelle du télescope, on a (voir \autoref{nicolas:alpha}) :
 \[ \alpha = \frac{\rayonT}{\rayonD} \alpha_0 \approx 0,1\text{\degres}.\]
 
 \begin{figure}
@@ -71,7 +71,7 @@ On note $\alpha$ le demi-angle de d'ouverture du télescope, ou plutôt le demi-
 
 \subsection{Calcul approché de la durée journalière d'observation}
 
-Supposons que l'orbite apparaisse dans la visée du télescope avec un angle $\psi$ vis-à-vis de l'horizontale. Elle semble alors balayer la fenêtre d'observation avec une vitesse $\omegaT \sin(\psi)$ (voir figure \ref{nicolas:fenetre}). Il lui faut donc un temps $\tau_0$ pour traverser entièrement celle-ci, avec $\tau_0$ donné par la formule
+Supposons que l'orbite apparaisse dans la visée du télescope avec un angle $\psi$ vis-à-vis de l'horizontale. Elle semble alors balayer la fenêtre d'observation avec une vitesse $\omegaT \sin(\psi)$ (voir \autoref{nicolas:fenetre}). Il lui faut donc un temps $\tau_0$ pour traverser entièrement celle-ci, avec $\tau_0$ donné par la formule
 \[ \tau_0 = \frac{2\alpha}{\omegaT \sin(\psi)}.\]
 Cet angle $\psi$ est l'angle entre le vecteur vitesse du télescope $T$ et celui d'un débris $D$ situé sur l'orbite. 
 %On connait déjà $\overrightarrow{OT}$ ; quant à $\overrightarrow{OD}$, on sait qu'il se déplace dans un plan $(O, \vec{f}_1, \vec{f}_2)$ perpendiculaire à $\vec{n}$ sur un cercle de rayon $\rayonD$ de centre $O$ et de vitesse angulaire $\omegaD = \frac{2\pi}{\TD}$, et que $O$, $T$ et $D$ sont alignés pour $t=0$. Ceci nous suffit pour obtenir :
@@ -147,7 +147,7 @@ En particulier,
 \end{center}
 \end{figure}%
 
-La figure \ref{nicolas:observabilite} montre le nombre de minutes par jour où l'orbite est visible. Cette durée ne dépend que de $\iT$ et de $\iD$. Lorsque $\iD=\iT=0$ ou $\iD=\iT=\frac{\pi}{2}$, l'orbite est en permanence visible : le premier cas correspond au télescope situé sur l'équateur avec une orbite équatoriale, le second au télescope au pôle Nord avec une orbite polaire. Lorsque $\iD < \iT$, l'orbite n'est pas assez inclinée et n'est donc jamais visible par le télescope, situé lui à une latitude trop élevée. Lorsque $\iD = \frac{\pi}{2}$ et $\iT = 0$, c'est-à-dire pour une orbite polaire et un télescope à l'équateur, l'orbite n'est plus visible que 24 secondes par jour. 
+La \autoref{nicolas:observabilite} montre le nombre de minutes par jour où l'orbite est visible. Cette durée ne dépend que de $\iT$ et de $\iD$. Lorsque $\iD=\iT=0$ ou $\iD=\iT=\frac{\pi}{2}$, l'orbite est en permanence visible : le premier cas correspond au télescope situé sur l'équateur avec une orbite équatoriale, le second au télescope au pôle Nord avec une orbite polaire. Lorsque $\iD < \iT$, l'orbite n'est pas assez inclinée et n'est donc jamais visible par le télescope, situé lui à une latitude trop élevée. Lorsque $\iD = \frac{\pi}{2}$ et $\iT = 0$, c'est-à-dire pour une orbite polaire et un télescope à l'équateur, l'orbite n'est plus visible que 24 secondes par jour. 
 
 
 \subsection{Partie de l'orbite observée chaque jour}
