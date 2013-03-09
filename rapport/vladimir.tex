@@ -15,13 +15,14 @@ de mouvement:
    \theta_{T_j}(t) &=& \theta_{T_j}(t_0) + (t-t_0)\dot \theta_{T_j} , \, j = 1, \dots M \label{vladimir:tel} \\
    \theta_S(t) &=& \theta_S(t_0) +  (t-t_0)\dot\theta_S  \label{vladimir:sun} 
 \end{eqnarray}
-Ici les deux premi\`eres \'equations sur $\theta_{O_i}$ et $\theta_{D_i}$ caract\'erisent 
-la position de $i$'\`eme satellite par rapport \`a un rep\`ere fixe; la troisi\`eme \'equation 
-sur $\theta_{T_j}$ est expliqu\'ee par la rotation de la Terre est caract\'erise donc 
-la position de t\'elescopes; la derni\`ere \'equation d\'efini l'\'evaluation de direction 
-du Soleil. 
+Ici les deux premi\`eres \'equations sur $\theta_{O_i}$ et
+$\theta_{D_i}$ caract\'erisent la position du $i$'\`eme satellite par
+rapport \`a un rep\`ere fixe; la troisi\`eme \'equation sur
+$\theta_{T_j}$ est expliqu\'ee par la rotation de la Terre et
+caract\'erise donc la position des t\'elescopes; la derni\`ere
+\'equation d\'efinit l'évolution de la direction du Soleil.
 
-La trajectoire typique de satellite (dans un rep\`ere fixe) va « colorer » une partie de
+La trajectoire typique du satellite (dans un rep\`ere fixe) va « colorer » une partie de
 la sph\`ere de rayon correspondant \`a l'altitude de satellite, ou plus pr\'ecis\'ement la sph\`ere
 sans les « chapeaux » autour des p\^oles, donn\'es par l'angle d'inclinaison d'orbite
 (voir \autoref{vladimir:repfx})
@@ -31,19 +32,25 @@ sans les « chapeaux » autour des p\^oles, donn\'es par l'angle d'inclinaison d
             \label{vladimir:repfx}
 Trajectoire de satellite dans un syst\`eme des coordonn\'ees fixe. }
  \end{figure}
-Sa projection sur la Terre tournante est donn\'ee sur la \autoref{vladimir:mks}. 
-On a l'habitude de voir les trajectoires comme celle-ci dans les
-centres de contr\^ole des missions spatiales.
- Comme on le voit clairement, la trajectoire g\'en\'erique n'est pas p\'eriodique
- (\autoref{vladimir:mks}, zone entourée).
+
+ %% Note de Antoine : la figure est incompréhensible sans les axes, je
+ %% la commente ...
 
 
-\begin{figure}[htp] \centering
-      \includegraphics*[height=3in]{mks.png}
-      \caption{
-            \label{vladimir:mks}
-Proj\'ection de traj\'ectoire de satellite}
- \end{figure}
+ 
+% Sa projection sur la Terre tournante est donn\'ee sur la \autoref{vladimir:mks}. 
+% On a l'habitude de voir les trajectoires comme celle-ci dans les
+% centres de contr\^ole des missions spatiales.
+%  Comme on le voit clairement, la trajectoire g\'en\'erique n'est pas p\'eriodique
+%  (\autoref{vladimir:mks}, zone entourée).
+
+
+% \begin{figure}[htp] \centering
+%       \includegraphics*[height=3in]{mks.png}
+%       \caption{
+%             \label{vladimir:mks}
+% Proj\'ection de traj\'ectoire de satellite}
+%  \end{figure}
  
 
 \subsection{La loi de probabilit\'e d'observation}
@@ -51,11 +58,13 @@ La premi\`ere s\'erie des tests num\'eriques a pour but de v\'erifier
 l'hypoth\`ese de la loi de probabilit\'e d'observer un satellite 
 donn\'e avec un t\'elescopes donn\'e. 
 Comme \`a chaque instant on connait la position du satellite et du t\'elescope
-(équations (\ref{vladimir:sat}, \ref{vladimir:tel})) on peut comparer ses coordonn\'ees sph\'eriques 
-et conclure si le satellite est dans le champ de vue de t\'elescope. Sur la \autoref{vladimir:mks} cette situation correspond \`a l'intersection de la projection de la
-trajectoire avec la zone bleue, repr\'esentante le t\'elescope.
-(L'image est bien sûr sch\'ematique: pour la vrai taille du champ de vue de t\'elescope
-utilis\'ee dans les simulation voir la section sur l'observabilit\'e d'une orbite.)
+(équations (\ref{vladimir:sat}, \ref{vladimir:tel})), on peut comparer ses coordonn\'ees sph\'eriques 
+et conclure si le satellite est dans le champ de vue de t\'elescope.
+
+% Sur la \autoref{vladimir:mks} cette situation correspond \`a l'intersection de la projection de la
+% trajectoire avec la zone bleue, repr\'esentant le t\'elescope.
+% (L'image est bien sûr sch\'ematique: pour la vraie taille du champ de vue de t\'elescope
+% utilis\'ee dans les simulation, voir la section sur l'observabilit\'e d'une orbite.)
 
 Le test num\'erique est donc une simulation de mouvement de $N$ satellites
 tous sur l'orbite avec le m\^eme angle d'inclinaison $i_d$ de la valeur proche (mais pas \'egale) 
@@ -75,15 +84,14 @@ est donn\'ee sur la \autoref{vladimir:stat}.
 Qualitativement elle correspond bien \`a notre estimation th\'eorique m\^eme avec la loi
 binomiale.  
 
-Ce r\'esultat montre entre autre que l'hypoth\`ese de l'ind\'ependance 
+Ce r\'esultat montre entre autres que l'hypoth\`ese de l'ind\'ependance 
 d'observer le satellite pendant deux jours cons\'ecutifs est 
 bien valable au d\'ebut d'observation. 
 % La diff\'erence quantitative entre la probabilit\'e estim\'ee est simul\'ee
 % est de 0,XX\%.  %L\`a je ne souviens plus...
 
-Apparemment cela devient plus subtile pour le temps d'observation assez important, 
-au moment quand la proportion des satellites d\'ej\`a rep\'er\'es devient suffisamment grand.
-Cela se voit mieux \`a l'\'echelle logarithmique (\autoref{vladimir:stat_log}).
+Pour des temps plus longs, le comportement est plus subtil, comme on
+peut le voir en échelle logarithmique (\autoref{vladimir:stat_log})
 
 \begin{figure}[ht] \centering
       \includegraphics*[height=3in]{stat_log.png}
@@ -93,10 +101,9 @@ Cela se voit mieux \`a l'\'echelle logarithmique (\autoref{vladimir:stat_log}).
   de la loi binomiale en noir}
  \end{figure}
 
-On pense donc que le mod\`ele plus avanc\'e utilisant aussi la distribution de Cauchy 
-peut-\^etre plus adapt\'e dans ce cas l\`a. Mais cette conjecture n\'ecessite la suite de la simulation pour 
-\^etre valid\'ee, qu'on n'a pas eu le temps de faire en cours de \textsc{seme}.  
-  
+Un modèle plus avancé, prenant en compte les défauts d'ergodicité,
+doit donc être utilisé. Pour le vérifier, il faudrait des simulations
+plus longues et précises, que nous n'avons pas eu le temps de faire.  
 \subsection{Condition d'\'eclairage et l'ergodicit\'e}  
 Pour la deuxi\`eme s\'erie des simulations on ajoute la condition d'\'eclairage, c'est-\`a-dire 
 si le d\'ebris est dans le champ de vue de t\'elescope il n'est consid\'er\'e comme rep\'er\'e
@@ -145,25 +152,24 @@ Ceci est coh\'erent avec la probabilit\'e journali\`ere d'observation
    
    De plus on voit que la probabilit\'e d'observation \`a la fin de p\'eriode
    est la m\^eme quand le produit de temps d'observation et le nombre des t\'elescopes
-   coïncide. On observe donc « le premi\`ere pas vers l'ergodicit\'e », quand la moyenne 
+   coïncide. On observe donc « le premier pas vers l'ergodicit\'e », quand la moyenne 
    temporelle est \'egale \`a la moyenne de l'ensemble. 
    
    \subsection{Impl\'ementation}
 On va conclure la section de simulation par quelques mots sur l'impl\'ementation.
 Tout d'abord l'algorithme utilis\'e est assez direct comme on \'etudie les solutions 
-connues des \'equations de mouvement (\ref{vladimir:sat}, \ref{vladimir:tel}, \ref{vladimir:sun}). Ceci permet de n\'egliger presque toutes les questions
-de pr\'ecision num\'erique. On a analys\'e la trajectoire enti\`ere de chaque d\'ebris m\^eme si cela n'est pas vraiment 
-n\'ecessaire pour la statistique d'observation des d\'ebris, entre autre c'est fait pour comprendre 
-le comportement qualitatif du syst\`eme. 
+connues des \'equations de mouvement (\ref{vladimir:sat}, \ref{vladimir:tel}, \ref{vladimir:sun}). On a analys\'e la trajectoire enti\`ere de chaque d\'ebris m\^eme si cela n'est pas vraiment 
+n\'ecessaire pour la statistique d'observation des d\'ebris.
 
 On peut proposer plusieurs pistes de l'am\'elioration de la m\'ethode. 
 %(non-impl\'ement\'ees, faute de temps).
-La simulation utilis\'ee est assez « brute force » au sens qu'on mod\'elise le ph\'enom\`ene m\^eme quand il
+La simulation utilis\'ee est assez simpliste au sens qu'on mod\'elise le ph\'enom\`ene m\^eme quand il
  ne nous int\'eresse pas, c'est-\`a-dire on \'etudie les parties longues des orbites pour lesquelles on est sûr 
 qu'elle n'intersectent pas le champ de vue du t\'elescope. Pour \'eviter cela on peut estimer le temps de prochaine
 intersection de l'orbite du d\'ebris avec la trajectoire du t\'elescope et \'etudier cette p\'eriode avec plus de pr\'ecision. 
 C'est direct pour un seul t\'elescope et assez facile pour plusieurs. On remarque \'egalement que les simulations
-pour les trajectoires des d\'ebris distincts sont ind\'ependantes, c'est-\`a-dire l'algorithme de calcul d'estimation de la
+pour les trajectoires des d\'ebris distincts sont ind\'ependantes,
+c'est-\`a-dire que l'algorithme de calcul d'estimation de la
 probabilit\'e d'observation est parall\'elisable avec un gain lin\'eaire. 
    
    

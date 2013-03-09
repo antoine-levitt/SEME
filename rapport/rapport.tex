@@ -110,9 +110,27 @@
 \thispagestyle{empty}
 \begin{center}
 
-\abstract{blabla......}
-\vfill
-Mots clés :
+  \abstract{ La prolifération des débris spatiaux est un danger pour
+    les satellites artificiels. On étudie ici le problème de
+    l'observation de ces débris : où faut-il placer des téléscopes sur
+    terre et combien en faut-il pour observer la plupart des débris
+    dangereux ? Cette étude est compliquée par les conditions
+    d'observation des débris : on ne peut les voir que lorsqu'ils sont
+    éclairés par le soleil, et que le téléscope ne l'est pas. On
+    calcule la probabilité d'observation d'un débris en un jour (aux
+    alentours de $1\%$), qu'on vérifie par des simulations
+    numériques. On étudie enfin plus précisément l'indépendance des
+    observations d'un jour sur l'autre, ce qui conduit à la conclusion
+    qu'il est possible que des débris passent entre les mailles du
+    filet avec une probabilité bien plus grande que ce à quoi on
+    s'attendrait si les observations étaient indépendantes. Cela
+    tendrait à montrer qu'il vaut mieux utiliser deux téléscopes
+    pendant un an qu'un téléscope pendant deux ans.}
+  
+  \vfill
+
+  Mots clés : mécanique céleste, observation de débris spatiaux,
+  conditions d'éclairement.
 
 \vfill
 Num\'ero de publication : SEME00X-201X-0X-X
@@ -228,7 +246,7 @@ Munis de ces r\'esultats,  nous avons ainsi pu d\'eterminer pour chaque latitude
  \end{figure}
 
 
-\section{Ergodicité}
+\section{Indépendance des observations}
 Les calculs que nous avons faits donnent la probabilité $p$ qu'étant
 donné un débris de paramètres $a_{D}$ et $i_{D}$ positionné
 aléatoirement sur son orbite, il soit vu en un jour. La question qui
@@ -320,7 +338,7 @@ distribution de Cauchy, de densité
   f_{\mathcal C}(x) = \frac 1 \pi \frac 1 {1+x^{2}}
 \end{align}
 
-La distribution de Cauchy a des queues extrêmement épaisses (sa
+La distribution de Cauchy a des traînes extrêmement épaisses (sa
 moyenne n'est même pas définie). En particulier, le théorème implique
 que
 \begin{align}
@@ -346,34 +364,55 @@ les observations étaient indépendantes d'un jour à l'autre).
 \input{vladimir.tex}
 
 \section{Conclusion}
-Limitations, perspectives :
+À partir d'une modélisation simple mais réaliste du système de trois
+corps soleil-terre-débris, on aboutit à la conclusion que, si la
+latitude du téléscope est compatible avec celle du débris, le
+téléscope a deux fenêtres de 12s par jour de visibilité sur l'orbite
+du débris. Pendant chaque fenêtre, il y a une probabilité d'environ
+$1\%$ d'observer le débris. Si le téléscope est bien positionné sur la
+terre, cette probabilité est, en moyenne, diminuée d'un facteur de 2
+environ à cause des conditions d'éclairement.
+
+Si les observations étaient indépendantes d'un jour sur l'autre, la
+distribution du nombre d'observations d'un débris suivrait une loi
+binomiale. L'étude d'un modèle jouet suggère que cette distribution se
+rapproche plus d'une loi de Cauchy, dont les traînes sont très
+épaisses.
+
+Ces conclusions semblent être vérifiées par les simulations
+numériques, qui montrent que l'observation de tous les débris est
+problématique en temps long. Si cet effet se vérifie, il signifie
+qu'il vaut mieux utiliser deux téléscopes pendant un an qu'un
+téléscope pendant deux ans, une conclusion assez peu intuitive.
+
+Notre étude, par sa courte durée, est limitée. En particulier, elle
+souffre des limitations suivantes :
+
 \begin{itemize}
-\item Orbites circulaires (modèle adaptable)
-\item $T_{\text{débris}} \ll T_{\text{terre}}$ : erreur de $10\%$ pour
-  orbites basses (héliosynchrones), pas valable pour orbites hautes
+\item On ne considère que des orbites circulaires. Néanmoins, notre
+  modèle est adaptable.
+\item On fait l'hypothèse que les débris tournent bien plus vite que
+  la terre, c'est-à-dire que $T_{\text{débris}} \ll
+  T_{\text{terre}}$. L'erreur est de $10\%$ pour les orbites basses
+  (héliosynchrones), mais est très élevée pour les orbites hautes
   (géostationnaires)
-\item Limites du modèle probabiliste, qui semble pourtant assez
-  pertinent. Modèle effectif qui rendrait compte du synchronisme
-  partiel des phénomènes ?
-\item Pas de prise en compte fine du téléscope (quelle position
-  choisir pour un bon $\alpha$ ?)
-\item Simulations numériques naïves (timestep trop grand quand orbite
-  en vue donc sous-estimation de la visibilité, et timestep trop petit
-  quand orbite pas en vue donc temps de calcul beaucoup trop
-  important). Essayer de prédire les intersections, et
-  « fast-forward » de la simulation.
+\item On néglige totalement la dépendance de l'angle d'ouverture
+  $\alpha$ par rapport à la position du téléscope, les conditions
+  météo, etc.
+\item Nos simulations numériques sont naïves, ce qui conduit à un
+  temps de calcul bien trop long par rapport au phénomène observé. Une
+  méthode plus appropriée serait d'essayer de prédire les
+  intersections de la zone d'observation du téléscope avec l'orbite du
+  débris, et de n'intégrer les équations que dans cette zone.
 \end{itemize}
 
 
-
-\section{Remerciements}
-Mathoverflow
 
 \appendix
 
 %\section{Code des simulations numériques}
 
-\input{files.tex}
+% \input{files.tex}
 
 
 \begin{thebibliography}{99}
