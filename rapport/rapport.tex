@@ -137,16 +137,16 @@ Num\'ero de publication : SEME00X-201X-0X-X
 \end{center}
 \newpage
 
-
-\section{Contexte}
-
-Ce travail a été réalisé dans le cadre de la 4\ieme{} 
-Semaine d'étude mathématiques et entreprises (\textsc{seme}), qui s'est tenue à
-dans les locaux de l'Institut Henri Poincaré (\textsc{ihp}) à Paris du lundi 15
-au vendredi 19 octobre 2012. Le groupe souhaite remercier les
-organisateurs de la \textsc{seme}, ainsi que Astrium et plus précisément Max
-Cerf pour avoir proposé ce sujet, que nous avons trouvé intéressant et
-riche.
+%
+%\section{Contexte}
+%
+%Ce travail a été réalisé dans le cadre de la 4\ieme{} 
+%Semaine d'étude mathématiques et entreprises (\textsc{seme}), qui s'est tenue à
+%dans les locaux de l'Institut Henri Poincaré (\textsc{ihp}) à Paris du lundi 15
+%au vendredi 19 octobre 2012. Le groupe souhaite remercier les
+%organisateurs de la \textsc{seme}, ainsi que Astrium et plus précisément Max
+%Cerf pour avoir proposé ce sujet, que nous avons trouvé intéressant et
+%riche.
 
 % \begin{multicols}{2}
 % \participant{Nicolas Bonnotte}{doctorant à l'Université Paris-Sud}{nicolas.bonnotte@math.u-psud.fr}
@@ -161,8 +161,9 @@ riche.
 
 
 
-\section{Introduction}
+%\section{Introduction}
 
+\input{intro.tex}
 
 
 %\section{Observation du débris}
@@ -387,19 +388,18 @@ téléscope pendant deux ans, une conclusion assez peu intuitive.
 
 Notre étude, par sa courte durée, est limitée. En particulier, elle
 souffre des limitations suivantes :
-
 \begin{itemize}
-\item On ne considère que des orbites circulaires. Néanmoins, notre
-  modèle est adaptable.
-\item On fait l'hypothèse que les débris tournent bien plus vite que
+\item on ne considère que des orbites circulaires. Néanmoins, notre
+  modèle est adaptable;
+\item on fait l'hypothèse que les débris tournent bien plus vite que
   la terre, c'est-à-dire que $T_{\text{débris}} \ll
   T_{\text{terre}}$. L'erreur est de $10\%$ pour les orbites basses
   (héliosynchrones), mais est très élevée pour les orbites hautes
-  (géostationnaires)
-\item On néglige totalement la dépendance de l'angle d'ouverture
+  (géostationnaires) ;
+\item on néglige totalement la dépendance de l'angle d'ouverture
   $\alpha$ par rapport à la position du téléscope, les conditions
-  météo, etc.
-\item Nos simulations numériques sont naïves, ce qui conduit à un
+  météo, etc. ;
+\item nos simulations numériques sont naïves, ce qui conduit à un
   temps de calcul bien trop long par rapport au phénomène observé. Une
   méthode plus appropriée serait d'essayer de prédire les
   intersections de la zone d'observation du téléscope avec l'orbite du
