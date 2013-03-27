@@ -9,12 +9,12 @@ de mouvement:
 % \begin{center}
 % \includegraphics[width = 0.75\linewidth]{map2.pdf} 
 % \end{center}
-\begin{eqnarray}
-   \theta_{O_i}(t) &=& \theta_{O_i}(t_0) + (t-t_0)\dot \theta_{O_i}  \nonumber \\
-   \theta_{D_i}(t) &=& \theta_{D_i}(t_0) + (t-t_0)\dot \theta_{D_i} , \, i = 1, \dots N \label{vladimir:sat} \\
-   \theta_{T_j}(t) &=& \theta_{T_j}(t_0) + (t-t_0)\dot \theta_{T_j} , \, j = 1, \dots M \label{vladimir:tel} \\
-   \theta_S(t) &=& \theta_S(t_0) +  (t-t_0)\dot\theta_S  \label{vladimir:sun} 
-\end{eqnarray}
+\begin{align}
+   \theta_{O_i}(t) &= \theta_{O_i}(t_0) + (t-t_0)\dot \theta_{O_i} &  \nonumber \\
+   \theta_{D_i}(t) &= \theta_{D_i}(t_0) + (t-t_0)\dot \theta_{D_i}  & i = 1, \dots N \label{vladimir:sat} \\
+   \theta_{T_j}(t) &= \theta_{T_j}(t_0) + (t-t_0)\dot \theta_{T_j} & j = 1, \dots M \label{vladimir:tel} \\
+   \theta_S(t) &= \theta_S(t_0) +  (t-t_0)\dot\theta_S  &\label{vladimir:sun} 
+\end{align}
 Ici les deux premi\`eres \'equations sur $\theta_{O_i}$ et
 $\theta_{D_i}$ caract\'erisent la position du $i$'\`eme satellite par
 rapport \`a un rep\`ere fixe; la troisi\`eme \'equation sur
