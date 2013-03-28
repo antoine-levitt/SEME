@@ -185,7 +185,7 @@ Dans cette partie on se place dans un rep\`ere g\'eocentrique qui tourne \`a la 
  
 Ainsi les saisons sont d\'etermin\'ees par une variation de l'angle d'incidence entre le plan \'equatorial et les rayons solaires.
 On mod\'elise dans notre rep\`ere cette variation par 
-\[ i_{S}(t)= i_{max}\cos(\omega_{s}t), \quad \text{avec} \quad i_{max}=23.75^\circ \quad \text{et}  \quad \omega_s=\frac{2\pi}{T_s}.\]
+\[ i_{S}(t)= i_{\max}\cos(\omega_{s}t), \quad \text{avec} \quad i_{\max}=23.75^\circ \quad \text{et}  \quad \omega_s=\frac{2\pi}{T_s}.\]
  
 L'objectif de cette partie est de d\'eterminer la proportion de ciel observable en prenant en compte les contraintes suivantes : 
 \begin{itemize}
@@ -342,11 +342,8 @@ distribution de Cauchy, de densité
 La distribution de Cauchy a des traînes extrêmement épaisses (sa
 moyenne n'est même pas définie). En particulier, le théorème implique
 que
-\begin{align}
-  P(N(n) = 0) \approx_{n\to\infty} \frac {\rho}{\beta \pi}\frac{\log n}{n}
-\end{align}
-
-Cette décroissance en $\frac {\log n} n$ est extrêmement lente (elle
+\[ P(N(n) = 0)\ \underset{n\to\infty}{\approx}\ \frac{\rho}{\beta \pi}\frac{\log n}{n}\]
+Cette décroissance en $(\log n)/n$ est extrêmement lente (elle
 est à comparer avec la décroissance exponentielle en $(1-p)^{n}$ si
 les observations étaient indépendantes d'un jour à l'autre).
 
@@ -368,7 +365,7 @@ les observations étaient indépendantes d'un jour à l'autre).
 À partir d'une modélisation simple mais réaliste du système de trois
 corps soleil-terre-débris, on aboutit à la conclusion que, si la
 latitude du téléscope est compatible avec celle du débris, le
-téléscope a deux fenêtres de 12s par jour de visibilité sur l'orbite
+téléscope a deux fenêtres de 24s par jour de visibilité sur l'orbite
 du débris. Pendant chaque fenêtre, il y a une probabilité d'environ
 $1\%$ d'observer le débris. Si le téléscope est bien positionné sur la
 terre, cette probabilité est, en moyenne, diminuée d'un facteur de 2
@@ -389,8 +386,8 @@ téléscope pendant deux ans, une conclusion assez peu intuitive.
 Notre étude, par sa courte durée, est limitée. En particulier, elle
 souffre des limitations suivantes :
 \begin{itemize}
-\item on ne considère que des orbites circulaires. Néanmoins, notre
-  modèle est adaptable;
+\item on ne considère que des orbites circulaires (notre
+  modèle est néanmoins adaptable) ;
 \item on fait l'hypothèse que les débris tournent bien plus vite que
   la terre, c'est-à-dire que $T_{\text{débris}} \ll
   T_{\text{terre}}$. L'erreur est de $10\%$ pour les orbites basses
